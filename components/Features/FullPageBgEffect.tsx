@@ -1,6 +1,6 @@
-import '../styles/pageBgColorEllipses.css';
+import '../../styles/pageBgColorEllipses.css';
 
-const PageBgEffect = () => {
+const FullPageBgEffect = () => {
   return (
     <div className='absolute w-full h-full overflow-hidden'>
       <span className='page-bg-ellips-1'></span>
@@ -11,4 +11,4 @@ const PageBgEffect = () => {
   );
 };
 
-export default PageBgEffect;
+export default FullPageBgEffect;

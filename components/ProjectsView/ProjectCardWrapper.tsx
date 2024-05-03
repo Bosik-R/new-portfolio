@@ -10,7 +10,7 @@ const ProjectCardWrapper = ({ children }: { children: ReactNode }) => {
         initial={{ rotateX: '90deg' }}
         animate={{ rotateX: '0deg' }}
         exit={{ rotateX: '90deg' }}
-        className='project-glass-card p-5 flex flex-col items-center gap-5 text-white w-full'>
+        className='project-glass-card p-5 flex flex-col items-center gap-5 text-white w-full opacity-75 hover:opacity-100'>
         {children}
       </motion.div>
     </AnimatePresence>

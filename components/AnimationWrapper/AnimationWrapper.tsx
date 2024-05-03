@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import SplineEventButton from '../Buttons/SplineEventButton';
+import HalfWidthBgEffect from '../Features/HalfWidthBgEffect';
 
 export type AnimationVariants = {
   initial: {
@@ -54,6 +55,7 @@ const AnimationWrapper = ({
               ? 'right-side-half-width-gradient items-end'
               : 'left-side-half-width-gradient '
           )}>
+          <HalfWidthBgEffect />
           <div
             className={twMerge(
               'mb-20 px-8 py-8',

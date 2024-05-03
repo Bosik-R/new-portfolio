@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/layoutBgColorEllipses.css';
+import '../../styles/layoutBgColorEllipses.css';
 
 const LayoutBgEffect = () => {
   return (

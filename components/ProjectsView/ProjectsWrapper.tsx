@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
-import PageBgEffect from '../PageBgEffect';
+import FullPageBgEffect from '../Features/FullPageBgEffect';
 import SplineEventButton from '../Buttons/SplineEventButton';
 
 const ProjectsWrapper = ({ children }: { children: ReactNode }) => {
@@ -23,7 +23,7 @@ const ProjectsWrapper = ({ children }: { children: ReactNode }) => {
             transition: { duration: 0.7, delay: 0 },
           }}
           className='absolute top-0 left-0 w-full h-full flex flex-col items-center z-20 bg-mainBg'>
-          <PageBgEffect />
+          <FullPageBgEffect />
           <div className='absolute top-8 right-8 z-30'>
             <SplineEventButton target='projectsReverse' setClose={setClose} />
           </div>

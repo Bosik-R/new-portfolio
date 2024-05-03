@@ -3,7 +3,7 @@
 import SplineEventButton from '@/components/Buttons/SplineEventButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import PageBgEffect from '../PageBgEffect';
+import FullPageBgEffect from '../Features/FullPageBgEffect';
 
 const ContactWrapper = ({ children }: { children: React.ReactNode }) => {
   const [close, setClose] = useState(false);
@@ -28,7 +28,7 @@ const ContactWrapper = ({ children }: { children: React.ReactNode }) => {
               setClose={setClose}
             />
           </div>
-          <PageBgEffect />
+          <FullPageBgEffect />
           {children}
         </motion.div>
       )}

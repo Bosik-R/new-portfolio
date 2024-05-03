@@ -10,7 +10,6 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
-  opacity: 0.7;
   height: 100%;
   justify-content: center;
   transition: all 0.4s ease;
@@ -20,7 +19,6 @@
   box-shadow: -5px 10px 50px -12px rgba(255, 255, 255, 0.747);
   backdrop-filter: blur(60%);
   -webkit-backdrop-filter: blur(20px);
-  opacity: 1;
 }
 
 .gridParent {
@@ -40,65 +38,38 @@
 
 .gridChild1 {
   grid-area: card1;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .gridChild2 {
   grid-area: card2;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .gridChild3 {
   grid-area: card3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild4 {
   grid-area: card4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild5 {
   grid-area: card5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild6 {
   grid-area: card6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild7 {
   grid-area: card7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild8 {
   grid-area: card8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridChild9 {
   grid-area: card9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .gridParentShowProject {
