@@ -55,10 +55,10 @@ const AnimationWrapper = ({
               ? 'right-side-half-width-gradient items-end'
               : 'left-side-half-width-gradient '
           )}>
-          <HalfWidthBgEffect />
+          <HalfWidthBgEffect invert={invert} />
           <div
             className={twMerge(
-              'mb-20 px-8 py-8',
+              'mb-10 px-8 py-8',
               invert ? 'self-end' : 'self-start'
             )}>
             <SplineEventButton target={splineTarget} setClose={setClose} />

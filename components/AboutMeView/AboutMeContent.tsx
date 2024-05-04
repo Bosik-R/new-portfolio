@@ -1,14 +1,48 @@
 import { aboutMeData } from '@/statics/aboutMeData';
+import LinkedInIcon from '../Icons/LinkedInIcon';
+import Link from 'next/link';
+import GitHubIcon from '../Icons/GitHubIcon';
+import CVIcon from '../Icons/CVIcon';
+
+const socialLinks = [
+  {
+    id: 'cv',
+    href: 'https://github.com/Bosik-R',
+    icon: <CVIcon />,
+  },
+  {
+    id: 'linkedin',
+    href: 'https://www.linkedin.com/in/tomasz-rosik-3b55381bb/',
+    icon: <LinkedInIcon />,
+  },
+  {
+    id: 'github',
+    href: 'https://github.com/Bosik-R',
+    icon: <GitHubIcon />,
+  },
+];
 
 const AboutMeContent = () => {
   const { lineTwo, lineThree, desc } = aboutMeData;
   return (
     <div className='max-w-[50%] w-full h-full flex flex-col items-center px-9 py-12 overflow-hidden relative text-grayLight'>
-      <h1 className='pb-1'>{lineTwo}</h1>
-      <h1 className='pb-10'>{lineThree}</h1>
-      <p className='glass-card p-12 max-w-3xl text-xl text-justify'>{desc}</p>
-      <div className='w-full'>
-        <div className='w-28 h-28 cursor-pointer'></div>
+      <div className='w-fit text-left'>
+        <h2 className='pb-1 text-gradient'>{lineTwo}</h2>
+        <h2 className='pb-10 text-gradient'>{lineThree}</h2>
+      </div>
+      <div className='glass-card p-12 max-w-3xl text-lg text-justify flex flex-col gap-5 mb-10'>
+        {desc.map((text, index) => (
+          <p key={index} className='text-lg'>
+            {text}
+          </p>
+        ))}
+      </div>
+      <div className='w-full flex justify-center gap-10'>
+        {socialLinks.map((link) => (
+          <Link key={link.id} href={link.href} target='_blank'>
+            {link.icon}
+          </Link>
+        ))}
       </div>
     </div>
   );
