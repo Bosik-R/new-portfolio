@@ -1,19 +1,24 @@
 export const experienced = [
-  'javascript',
-  'typescript',
-  'react-query',
-  'react-hook-form',
+  'Javascript',
+  'Typescript',
+  'React Query',
+  'React Hook Form',
   'Redux',
+  'RTK',
   'GraphQL',
-  'styled-components',
+  'Styled Components',
   'Tailwind',
-  'framer-motion',
+  'Framer Motion',
   'Directus',
   'Axios',
   'MaterialUI',
   'Yup',
-  'HeadlesUI',
-  'Vendure',
 ] as const;
 
-export const triedOut = ['Remix', 'chakraUI', 'Strapi', 'Gatsby'] as const;
+export const triedOut = [
+  'Remix',
+  'ChakraUI',
+  'Strapi',
+  'Gatsby',
+  'Prisma',
+] as const;

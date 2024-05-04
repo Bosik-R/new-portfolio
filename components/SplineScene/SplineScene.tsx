@@ -4,12 +4,15 @@ import Spline from '@splinetool/react-spline';
 import useSpline from '@/hooks/useSpline';
 import { AnimatePresence, motion } from 'framer-motion';
 import Spinner from '../Features/Spinner';
+import Legend from '../Legend/Legend';
+import { usePathname } from 'next/navigation';
 
 const scene = process.env.NEXT_PUBLIC_SPLINE_SCENE ?? '';
-console.log(scene);
 
 const SplineScene = () => {
   const { onLoad, onMouseDown, loading } = useSpline();
+  const pathname = usePathname();
+  const home = pathname === '/';
 
   return (
     <div className='absolute top-0 left-0 w-full h-full z-10'>
@@ -32,8 +35,8 @@ const SplineScene = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
       <Spline scene={scene} onLoad={onLoad} onMouseDown={onMouseDown} />
+      {home && !loading ? <Legend /> : null}
     </div>
   );
 };

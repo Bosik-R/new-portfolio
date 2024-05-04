@@ -1,6 +1,10 @@
 export const aboutMeData = {
   lineTwo: `Tomasz Rosik`,
   lineThree: `Web Developer`,
-  desc: 'I am a web developer with more than two years of experience, recognized as a practical and effective programmer. I have proven myself in many projects that used various framework. I am responsible, confident and reliable.',
-  // desc: 'I’m a web developer with over 2-year of commercial experience. As a developer, I have proven myself in various projects',
+  desc: [
+    `Welcome to my digital realm!`,
+    `I'm a passionate web developer with more than two years of experience. 
+  Whether it's building dynamic web applications or optimizing user interfaces,       I embrace every project with enthusiasm and expertise.`,
+    `My goal is simple: to deliver cutting-edge solutions that exceed expectations and leave a lasting impression.`,
+  ],
 };
