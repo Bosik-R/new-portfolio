@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         mainBg: '#040011',
-        grayLight: '#c4c4c4',
+        grayLight: '#f0f0f0',
         hover: '#FCD600',
       },
       backgroundImage: {
