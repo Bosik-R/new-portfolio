@@ -17,9 +17,8 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
     <span className='font-bold'>{` / ${project.subtitle}`}</span>
   ) : null;
 
-  // const linkText;
   return (
-    <div className='project-glass-card p-5 text-white flex gap-5'>
+    <div className='project-glass-card p-5 text-white flex gap-5 h-full'>
       <Image
         src={project.image}
         alt='tamtu'
@@ -27,7 +26,7 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
         height={240}
         className='rounded-lg'
       />
-      <div className='flex flex-col justify-between gap-5 h-full'>
+      <div className='flex flex-col justify-between gap-5 h-auto'>
         <div className='mb-2'>
           <h6 className='pb-4'>
             {project.title}
@@ -40,7 +39,7 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
             view page
           </Link>
         ) : null}
-        <div className='flex gap-3 flex-wrap'>
+        <div className='flex gap-3 flex-wrap pt-2 border-t border-grayLight'>
           {project.tech.map((tech) => (
             <span key={tech} className='text-xs'>
               {tech}

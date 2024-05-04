@@ -53,10 +53,9 @@ const ProjectsContent = () => {
         {projectsArray.map((project, index) => (
           <motion.div
             onClick={() => handleSelectProject(project.id)}
-            initial={{ scale: 0, rotateX: 90 }}
+            initial={{ scale: 0 }}
             animate={{
               scale: 1,
-              rotateX: 0,
               transition: { delay: 4.5, type: 'spring' },
             }}
             exit={{
