@@ -7,7 +7,7 @@ import CVIcon from '../Icons/CVIcon';
 const socialLinks = [
   {
     id: 'cv',
-    href: 'https://github.com/Bosik-R',
+    href: 'https://drive.google.com/file/d/1TeyMp8I0H1dmrz4ZJi_CzXN3cqYxmysk/view?usp=drive_link',
     icon: <CVIcon />,
   },
   {
