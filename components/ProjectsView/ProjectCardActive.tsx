@@ -22,11 +22,11 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
       <Image
         src={project.image}
         alt='tamtu'
-        width={300}
-        height={240}
+        width={280}
+        height={220}
         className='rounded-lg'
       />
-      <div className='flex flex-col justify-between gap-5 h-auto'>
+      <div className='flex flex-col justify-between gap-3 h-auto'>
         <div className='mb-2'>
           <h6 className='pb-4'>
             {project.title}
