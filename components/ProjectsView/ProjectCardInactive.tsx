@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import ProjectCardWrapper from './ProjectCardWrapper';
 
 type ProjectTypes = {
   image: string;
@@ -8,7 +7,7 @@ type ProjectTypes = {
 };
 const ProjectCardInactive = ({ image, title }: ProjectTypes) => {
   return (
-    <ProjectCardWrapper>
+    <article className='project-glass-card p-5 flex flex-col items-center gap-5 text-white w-full opacity-75 hover:opacity-100'>
       <Image
         src={image}
         alt={title}
@@ -17,7 +16,7 @@ const ProjectCardInactive = ({ image, title }: ProjectTypes) => {
         className='rounded-lg overflow-hidden'
       />
       <h6 className='text-center'>{title}</h6>
-    </ProjectCardWrapper>
+    </article>
   );
 };
 

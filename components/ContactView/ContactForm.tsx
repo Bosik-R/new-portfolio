@@ -4,7 +4,7 @@ import { contactMeAction } from '@/actions/formAction';
 import { createRef, useState } from 'react';
 
 const ContactForm = () => {
-  const [message, setMessage] = useState<string>('message send');
+  const [message, setMessage] = useState<string>('');
 
   const formRef = createRef<HTMLFormElement>();
 
@@ -14,6 +14,9 @@ const ContactForm = () => {
     if (res?.status) {
       formRef.current?.reset();
       setMessage(res.message);
+      setTimeout(() => {
+        setMessage('');
+      }, 2000);
     }
   };
 
@@ -54,7 +57,7 @@ const ContactForm = () => {
       </div>
       <button
         type='submit'
-        className='w-full font-semibold tracking-[2px] text-xl text-grayLight rounded-xl px-5 py-2 hover:text-[#040011] border border-grayLight hover:font-extrabold hover:bg-grayLight'>
+        className='w-full font-semibold tracking-[2px] text-xl text-grayLight rounded-lg px-5 py-2 hover:text-[#040011] border border-grayLight hover:font-extrabold hover:bg-grayLight'>
         send message
       </button>
       {message ? (

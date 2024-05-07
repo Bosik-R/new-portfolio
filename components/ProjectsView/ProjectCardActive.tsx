@@ -18,7 +18,7 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
   ) : null;
 
   return (
-    <div className='project-glass-card p-5 text-white flex gap-5 h-full'>
+    <div className='project-glass-card p-5 text-white flex gap-5 h-full flex-col sm:flex-row'>
       <Image
         src={project.image}
         alt='tamtu'

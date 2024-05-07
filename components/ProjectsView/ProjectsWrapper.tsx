@@ -16,18 +16,18 @@ const ProjectsWrapper = ({ children }: { children: ReactNode }) => {
         <motion.section
           initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
           animate={{ WebkitMaskImage: visibleMask, maskImage: visibleMask }}
-          transition={{ duration: 1, delay: 3.2 }}
+          transition={{ duration: 1, delay: 2.7 }}
           exit={{
             WebkitMaskImage: hiddenMask,
             maskImage: hiddenMask,
             transition: { duration: 0.7, delay: 0 },
           }}
-          className='absolute top-0 left-0 w-full h-full flex flex-col items-center z-20 bg-mainBg'>
+          className='absolute top-0 left-0 right-0 bottom-0 w-full h-full flex flex-col items-center z-30 bg-mainBg overflow-hidden'>
           <FullPageBgEffect />
-          <div className='absolute top-8 right-8 z-30'>
+          <div className='py-4 lg:py-0 relative lg:absolute lg:top-8 lg:right-8 top-0 right-0 z-30'>
             <SplineEventButton target='projectsReverse' setClose={setClose} />
           </div>
-          <div className='flex justify-center items-center w-full h-full px-28'>
+          <div className='relative flex justify-center w-full h-full pt-10 overflow-auto'>
             {children}
           </div>
         </motion.section>

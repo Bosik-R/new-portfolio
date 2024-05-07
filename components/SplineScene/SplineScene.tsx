@@ -15,7 +15,7 @@ const SplineScene = () => {
   const home = pathname === '/';
 
   return (
-    <div className='absolute top-0 left-0 w-full h-full z-10'>
+    <div className='relative top-0 left-0 w-full h-1/2 md:h-full z-10'>
       <AnimatePresence>
         {loading && (
           <motion.div

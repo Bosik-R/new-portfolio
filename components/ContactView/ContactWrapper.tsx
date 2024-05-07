@@ -21,7 +21,7 @@ const ContactWrapper = ({ children }: { children: React.ReactNode }) => {
             clipPath: 'circle(0% at 50% 50%)',
             transition: { duration: 0.5, delay: 0 },
           }}
-          className='absolute w-full h-full flex justify-center items-center z-20 bg-mainBg'>
+          className='absolute top-0 left-0 w-full h-full flex justify-center items-center z-20 bg-mainBg'>
           <div className='absolute top-12 right-20 z-30 text-grayLight'>
             <SplineEventButton
               target={'contactMeReverse'}

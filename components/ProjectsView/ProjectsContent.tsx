@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { projectsData } from './mockData';
 import { twMerge } from 'tailwind-merge';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCardInactive from './ProjectCardInactive';
-import '../../styles/projectsGrid.css';
 import ProjectCardActive from './ProjectCardActive';
+import { projectsData } from '@/statics/projectsData';
+import '../../styles/projectsGrid.css';
 
 const ProjectsContent = () => {
   const [projectsArray, setProjectsArray] = useState(projectsData);
@@ -27,6 +27,7 @@ const ProjectsContent = () => {
     }
   };
 
+  //TODO add scroll to top after selecting project (usefull in mobile)
   const handleSelectProject = (projectId: number) => {
     if (selectedProjectId === projectId) {
       setSelectedProjectId(null);
@@ -46,7 +47,7 @@ const ProjectsContent = () => {
     <motion.div
       layout
       className={twMerge(
-        'max-w-[1600px] overflow-y-auto p-10',
+        'w-fit h-fit overflow-auto px-3 lg:px-14 py-2 md:py-20',
         selectedProjectId ? 'gridParentShowProject' : 'gridParent'
       )}>
       <AnimatePresence>
@@ -56,11 +57,10 @@ const ProjectsContent = () => {
             initial={{ scale: 0 }}
             animate={{
               scale: 1,
-              transition: { delay: 4.5, type: 'spring' },
+              transition: { delay: 3.6, type: 'spring' },
             }}
             exit={{
               opacity: 0,
-              rotateX: 90,
               transition: { delay: 0.5 },
             }}
             layout

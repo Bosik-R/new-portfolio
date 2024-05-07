@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: 1,
-    image: '/images/portfolio.png',
+    image: '/images/portfolio.webp',
     title: 'Portfolio',
     subtitle: 'Webpage / 3D Modeling',
     text: `I built this 3D integrated wepsite using Spline and Next.js. I chose Spline for 3D modelling because it's a quick way to create 3d scenes with states and events. 
@@ -10,7 +10,7 @@ export const projectsData = [
   },
   {
     id: 2,
-    image: '/images/tamtuweb.png',
+    image: '/images/tamtuweb.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Webpage',
     text: 'It was my individual project created by using Next.js(14). The page content is fetched by Axios and GraphQL from DirectusCMS. The subscription form is handled by React Hook Form.',
@@ -29,12 +29,10 @@ export const projectsData = [
   },
   {
     id: 3,
-    image: '/images/tamtu.png',
+    image: '/images/tamtu.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Management application',
     text: 'I joined the team during project development. I was responsible for the part involving creating and managing users and subscriptions.',
-    link: 'https://admin.tamtu.com.pl/',
-
     tech: [
       'React.js',
       'Typescript',
@@ -46,7 +44,7 @@ export const projectsData = [
   },
   {
     id: 4,
-    image: '/images/skydental.png',
+    image: '/images/skydental.webp',
     title: 'Skydental',
     subtitle: 'Webpage',
     text: 'A beautiful modern webpage which I build independently. It has a nice looking particles effect.',
@@ -63,7 +61,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    image: '/images/prete.png',
+    image: '/images/prete.webp',
     title: 'Prete',
     subtitle: 'e-commerce',
     text: `Mostly self-made digital storefront which was like a small victory for me. Integrating the front side with Vendure eCommerce CMS and seeing the online shop taking shape made me feel proud.`,
@@ -79,7 +77,7 @@ export const projectsData = [
   },
   {
     id: 6,
-    image: '/images/brainforge.png',
+    image: '/images/brainforge.webp',
     title: 'BrainforgeIT',
     subtitle: 'webpage',
     text: 'It was my first webpage that was presented to the general public. I felt a rush of excitement, seeing my creation came alive.',
@@ -96,7 +94,7 @@ export const projectsData = [
   },
   {
     id: 7,
-    image: '/images/furgonetka.png',
+    image: '/images/furgonetka.webp',
     title: 'Portmonetka',
     subtitle: 'checkout plugin',
     text: `It was my first individual project. I was resposible for crafting a front-end MVP. I knew that this was just the beginning of a remarkable adventure in the world of web development.`,
@@ -105,7 +103,7 @@ export const projectsData = [
   },
   {
     id: 8,
-    image: '/images/panele-montaz.png',
+    image: '/images/panele-montaz.webp',
     title: 'Installation Manager',
     subtitle: 'Assembly Process Manager',
     text: 'I took over the project during its development. I was responsible for completing the project both on the frontend and backend.',
@@ -113,7 +111,7 @@ export const projectsData = [
   },
   {
     id: 9,
-    image: '/images/panele.png',
+    image: '/images/panele.webp',
     title: 'Wholesale Managment',
     subtitle: 'Photovoltaic ordering platform',
     text: 'I joined a well shaped project, written in a framework that I bearly knew. I found myself immediately in the new situation. I dealt with fixing bugs and developing new functionalities both on the frontend and backend.',

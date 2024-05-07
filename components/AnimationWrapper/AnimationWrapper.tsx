@@ -1,4 +1,5 @@
 'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -50,7 +51,7 @@ const AnimationWrapper = ({
           animate={'animate'}
           exit={'exit'}
           className={twMerge(
-            'text-white w-full h-full absolute flex flex-col z-20',
+            'md:absolute top-0 left-0 bottom-0 w-full h-fit md:h-full relative flex flex-col z-20 overflow-auto',
             invert
               ? 'right-side-half-width-gradient items-end'
               : 'left-side-half-width-gradient '
@@ -58,7 +59,7 @@ const AnimationWrapper = ({
           <HalfWidthBgEffect invert={invert} />
           <div
             className={twMerge(
-              'mb-10 px-8 py-8',
+              'mb-2  md:mb-10 p-2 md:p-8',
               invert ? 'self-end' : 'self-start'
             )}>
             <SplineEventButton target={splineTarget} setClose={setClose} />
