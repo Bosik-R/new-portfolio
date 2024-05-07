@@ -47,7 +47,7 @@ const ProjectsContent = () => {
     <motion.div
       layout
       className={twMerge(
-        'w-fit h-fit overflow-auto lg:overflow-hidden px-3 lg:px-14 py-2 md:py-20',
+        'w-fit h-fit overflow-auto lg:overflow-hidden px-3 lg:px-14 py-2 md:pt-20 md:pb-14',
         selectedProjectId ? 'gridParentShowProject' : 'gridParent'
       )}>
       <AnimatePresence>

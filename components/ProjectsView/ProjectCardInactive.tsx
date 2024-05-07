@@ -7,7 +7,7 @@ type ProjectTypes = {
 };
 const ProjectCardInactive = ({ image, title }: ProjectTypes) => {
   return (
-    <article className='project-glass-card p-5 flex flex-col items-center gap-5 text-white w-full opacity-75 hover:opacity-100'>
+    <article className='project-glass-card p-3 flex flex-col items-center gap-5 text-white w-full opacity-75 hover:opacity-100'>
       <Image
         src={image}
         alt={title}
