@@ -22,7 +22,7 @@ const mouseLegend = [
 
 const Legend = () => {
   return (
-    <div className='absolute right-8 top-1/2 -translate-y-1/2 w-12 flex flex-col gap-4'>
+    <div className='hidden  absolute right-8 top-1/2 -translate-y-1/2 w-12 md:flex flex-col gap-4'>
       {mouseLegend.map((item) => (
         <div key={item.id} className='flex flex-col w-fit items-center gap-2'>
           {item.icon}

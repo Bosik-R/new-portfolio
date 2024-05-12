@@ -101,6 +101,7 @@
 .gridParentShowProject {
   display: grid;
   height: fit-content;
+  max-width: 1600px;
   grid-auto-columns: 1fr;
   grid-auto-rows: max-content;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;

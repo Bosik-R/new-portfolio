@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Spinner from '../Features/Spinner';
 import Legend from '../Legend/Legend';
 import { usePathname } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
 
 const scene = process.env.NEXT_PUBLIC_SPLINE_SCENE ?? '';
 
@@ -15,7 +16,11 @@ const SplineScene = () => {
   const home = pathname === '/';
 
   return (
-    <div className='relative top-0 left-0 w-full h-1/2 md:h-full z-10'>
+    <div
+      className={twMerge(
+        'relative top-0 left-0 w-full md:h-full z-10',
+        home ? 'h-full' : 'h-1/2'
+      )}>
       <AnimatePresence>
         {loading && (
           <motion.div
