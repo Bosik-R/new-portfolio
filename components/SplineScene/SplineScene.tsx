@@ -9,8 +9,6 @@ import { usePathname } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 
 const scene = '/scene.splinecode';
-const sceneEnv = process.env.NEXT_PUBLIC_SPLINE_SCENE ?? '';
-console.log(sceneEnv);
 
 const SplineScene = () => {
   const { onLoad, onMouseDown, loading } = useSpline();
