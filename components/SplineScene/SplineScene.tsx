@@ -8,7 +8,7 @@ import Legend from '../Legend/Legend';
 import { usePathname } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 
-const scene = '/scene.splinecode';
+const scene = process.env.NEXT_PUBLIC_SPLINE_SCENE ?? '';
 
 const SplineScene = () => {
   const { onLoad, onMouseDown, loading } = useSpline();
