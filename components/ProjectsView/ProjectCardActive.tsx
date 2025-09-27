@@ -35,7 +35,7 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
           <p>{project.text}</p>
         </div>
         {project.link ? (
-          <Link href={project.link} className='underline'>
+          <Link href={project.link} className='underline' target='_blank'>
             view page
           </Link>
         ) : null}
