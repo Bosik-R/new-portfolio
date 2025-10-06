@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/styles/globals.css';
 import LayoutBgEffect from '@/components/Features/LayoutBgEffect';
 import { SplineContextProvider } from '@/context/SplineContext';
 import SplineScene from '@/components/SplineScene/SplineScene';
