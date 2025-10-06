@@ -2,6 +2,20 @@ export const projectsData = [
   {
     id: 1,
     image: '/images/portfolio.webp',
+    title: 'Scrapi',
+    subtitle: 'Fullstack App',
+    text: `My personal individual project. The backend is responsible for scraping vehicle trade sites every minut using cron-job. It confronts the result with the database. Newest entries are send using socet.io and push notification to an react native mobile app. `,
+    tech: [
+      'Node.js',
+      'Express',
+      'Socet.io',
+      'Expo React Native',
+      'Expo Notification',
+    ],
+  },
+  {
+    id: 2,
+    image: '/images/portfolio.webp',
     title: 'Portfolio',
     subtitle: 'Webpage / 3D Modeling',
     text: `I built this 3D integrated wepsite using Spline and Next.js. I chose Spline for 3D modelling because it's a quick way to create 3d scenes with states and events. 
@@ -9,7 +23,7 @@ export const projectsData = [
     tech: ['Next.js', 'Spline', 'Typescript', 'Tailwind', 'Framer Motion'],
   },
   {
-    id: 2,
+    id: 3,
     image: '/images/tamtuweb.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Webpage',
@@ -28,7 +42,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     image: '/images/tamtu.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Management application',
@@ -43,7 +57,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     image: '/images/skydental.webp',
     title: 'Skydental',
     subtitle: 'Webpage',
@@ -57,22 +71,6 @@ export const projectsData = [
       'GraphQL',
       'Directus',
       'Framer Motion',
-    ],
-  },
-  {
-    id: 5,
-    image: '/images/prete.webp',
-    title: 'Prete',
-    subtitle: 'e-commerce',
-    text: `Mostly self-made digital storefront which was like a small victory for me. Integrating the front side with Vendure eCommerce CMS and seeing the online shop taking shape made me feel proud.`,
-    link: 'https://prete.eu/',
-    tech: [
-      'Next.js',
-      'Typescript',
-      'Styled Components',
-      'React Query',
-      'GraphQL',
-      'Vendure',
     ],
   },
   {

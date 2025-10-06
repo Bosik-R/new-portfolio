@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sentry/nextjs": "^8.26.0",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.10.71",
     "@types/nodemailer": "^6.4.14",
