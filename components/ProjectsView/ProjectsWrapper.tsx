@@ -27,7 +27,7 @@ const ProjectsWrapper = ({ children }: { children: ReactNode }) => {
           <div className='py-4 lg:py-0 relative lg:absolute lg:top-8 lg:right-8 top-0 right-0 z-30'>
             <SplineEventButton target='projectsReverse' setClose={setClose} />
           </div>
-          <div className='relative flex justify-center w-full h-full pt-10 overflow-auto'>
+          <div className='relative flex justify-center items-center w-full h-full p-10 pt-20 overflow-auto'>
             {children}
           </div>
         </motion.section>

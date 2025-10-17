@@ -2,20 +2,6 @@ export const projectsData = [
   {
     id: 1,
     image: '/images/portfolio.webp',
-    title: 'Scrapi',
-    subtitle: 'Fullstack App',
-    text: `My personal individual project. The backend is responsible for scraping vehicle trade sites every minut using cron-job. It confronts the result with the database. Newest entries are send using socet.io and push notification to an react native mobile app. `,
-    tech: [
-      'Node.js',
-      'Express',
-      'Socet.io',
-      'Expo React Native',
-      'Expo Notification',
-    ],
-  },
-  {
-    id: 2,
-    image: '/images/portfolio.webp',
     title: 'Portfolio',
     subtitle: 'Webpage / 3D Modeling',
     text: `I built this 3D integrated wepsite using Spline and Next.js. I chose Spline for 3D modelling because it's a quick way to create 3d scenes with states and events. 
@@ -23,7 +9,7 @@ export const projectsData = [
     tech: ['Next.js', 'Spline', 'Typescript', 'Tailwind', 'Framer Motion'],
   },
   {
-    id: 3,
+    id: 2,
     image: '/images/tamtuweb.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Webpage',
@@ -42,7 +28,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     image: '/images/tamtu.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Management application',
@@ -57,7 +43,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     image: '/images/skydental.webp',
     title: 'Skydental',
     subtitle: 'Webpage',
@@ -74,7 +60,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 5,
     image: '/images/brainforge.webp',
     title: 'BrainforgeIT',
     subtitle: 'webpage',
@@ -91,7 +77,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 6,
     image: '/images/furgonetka.webp',
     title: 'Portmonetka',
     subtitle: 'checkout plugin',
@@ -100,19 +86,19 @@ export const projectsData = [
     tech: ['React', 'Styled Components', 'Framer Motion'],
   },
   {
-    id: 8,
+    id: 7,
     image: '/images/panele-montaz.webp',
     title: 'Installation Manager',
     subtitle: 'Assembly Process Manager',
     text: 'I took over the project during its development. I was responsible for completing the project both on the frontend and backend.',
-    tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Typescript'],
+    tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Express', 'Typescript'],
   },
   {
-    id: 9,
+    id: 8,
     image: '/images/panele.webp',
     title: 'Wholesale Managment',
     subtitle: 'Photovoltaic ordering platform',
     text: 'I joined a well shaped project, written in a framework that I bearly knew. I found myself immediately in the new situation. I dealt with fixing bugs and developing new functionalities both on the frontend and backend.',
-    tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node'],
+    tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Express'],
   },
 ];
