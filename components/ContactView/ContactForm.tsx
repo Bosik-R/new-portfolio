@@ -24,19 +24,19 @@ const ContactForm = () => {
     <form
       ref={formRef}
       action={send}
-      className='glass-card px-14 pt-10 pb-16 max-w-[400px] flex flex-col items-center gap-3'>
+      className='px-10 max-w-[400px] flex flex-col items-center gap-5 relative z-50'>
       <h3 className='font-bold text-grayLight pb-5 text-center'>contact me</h3>
       <div className={`relative pt-6 w-full`}>
         <label
           htmlFor={'name'}
           className='text-base text-grayLight leading-4 px-1 absolute top-0 z-10'>
-          {'Name / Company'}
+          {'name / company'}
         </label>
         <input
           id={'name'}
           name='name'
           className={
-            'text-lg focus:outline-2 focus:outline-grayLight active:outline-grayLight outline rounded-md outline-1 outline-gray-500 px-4 py-3 text-grayLight font-medium w-full bg-transparent'
+            'text-lg outline-2 outline-grayLight outline rounded-md px-4 py-3 text-grayLight font-medium w-full bg-transparent'
           }
         />
       </div>
@@ -44,20 +44,20 @@ const ContactForm = () => {
         <label
           htmlFor={'message'}
           className='text-base text-grayLight leading-4 px-1 absolute top-0 z-10'>
-          Message
+          message
         </label>
         <textarea
           id='message'
           name='message'
           maxLength={300}
           className={
-            'max-h-[400px] min-h-24 text-lg focus:outline-2 focus:outline-grayLight active:outline-grayLight outline rounded-md outline-1 outline-gray-500 px-4 py-3 text-grayLight font-medium w-full  bg-transparent'
+            'max-h-[400px] min-h-24 text-lg outline-2 outline-grayLight outline rounded-md px-4 py-3 text-grayLight font-medium w-full bg-transparent'
           }
         />
       </div>
       <button
         type='submit'
-        className='w-full font-semibold tracking-[2px] text-xl text-grayLight rounded-lg px-5 py-2 hover:text-[#040011] border border-grayLight hover:font-extrabold hover:bg-grayLight'>
+        className='w-full font-semibold tracking-[2px] text-xl text-grayLight rounded-lg px-5 py-2 hover:text-[#040011] border border-grayLight hover:font-extrabold hover:bg-grayLight duration-300'>
         send message
       </button>
       {message ? (

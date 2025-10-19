@@ -29,7 +29,7 @@ const ContactWrapper = ({ children }: { children: React.ReactNode }) => {
             />
           </div>
           <FullPageBgEffect />
-          {children}
+          <div className='max-w-4xl w-full flex gap-8'>{children}</div>
         </motion.div>
       )}
     </AnimatePresence>
