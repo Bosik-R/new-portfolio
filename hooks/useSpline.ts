@@ -1,4 +1,4 @@
-import { useSplineContext } from '@/context/SplineContext';
+import { useSplineContext } from '../context/SplineContext';
 import { usePathname, useRouter } from 'next/navigation';
 import { SplineEvent } from '@splinetool/react-spline';
 import type { Application } from '@splinetool/runtime';
@@ -31,7 +31,7 @@ const useSpline = () => {
     }
   }
 
-  function onMouseDown(e: SplineEvent) {
+  function onSplineMouseDown(e: SplineEvent) {
     const targetName = e.target.name;
     if (targetName === 'aboutMeView') {
       router.push('/about-me');
@@ -50,7 +50,7 @@ const useSpline = () => {
     }
   }
 
-  return { onLoad, onMouseDown, loading };
+  return { onLoad, onSplineMouseDown, loading };
 };
 
 export default useSpline;

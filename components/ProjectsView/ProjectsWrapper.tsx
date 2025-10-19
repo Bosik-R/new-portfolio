@@ -14,15 +14,15 @@ const ProjectsWrapper = ({ children }: { children: ReactNode }) => {
     <AnimatePresence>
       {!close && (
         <motion.section
-          initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
-          animate={{ WebkitMaskImage: visibleMask, maskImage: visibleMask }}
+          initial={{ webkitMaskImage: hiddenMask, maskImage: hiddenMask }}
+          animate={{ webkitMaskImage: visibleMask, maskImage: visibleMask }}
           transition={{ duration: 1, delay: 2.7 }}
           exit={{
-            WebkitMaskImage: hiddenMask,
+            webkitMaskImage: hiddenMask,
             maskImage: hiddenMask,
             transition: { duration: 0.7, delay: 0 },
           }}
-          className='absolute top-0 left-0 right-0 bottom-0 w-full h-full flex flex-col items-center z-30 bg-mainBg overflow-hidden'>
+          className='absolute top-0 left-0 right-0 bottom-0 w-full h-full flex flex-col items-center z-30 bg-[#040011] overflow-hidden'>
           <FullPageBgEffect />
           <div className='py-4 lg:py-0 relative lg:absolute lg:top-8 lg:right-8 top-0 right-0 z-30'>
             <SplineEventButton target='projectsReverse' setClose={setClose} />

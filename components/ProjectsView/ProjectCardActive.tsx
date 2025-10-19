@@ -39,7 +39,7 @@ const ProjectCardActive = ({ project }: ProjectCardActiveProps) => {
             view page
           </Link>
         ) : null}
-        <div className='flex gap-3 flex-wrap pt-2 border-t border-grayLight'>
+        <div className='flex gap-3 flex-wrap pt-2 border-t border-[#f0f0f0]'>
           {project.tech.map((tech) => (
             <span key={tech} className='text-xs'>
               {tech}

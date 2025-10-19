@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../../../statics/projectCards';
 
 const data = {
   techUsed: {
@@ -22,13 +22,13 @@ const ManagerDescription = ({ activeCard }: { activeCard: string }) => {
 
   return (
     <ul ref={scope} className='absolute w-[90%] h-fit text-base'>
-      <li id='desc_li_1' className='p-0 m-0 list-none'>
+      <li className='p-0 m-0 list-none'>
         <p className='mb-3'>
           Vehicles stock manager. Add and edit vehicles data and files. View
           data from the web scraper Scrapi API
         </p>
       </li>
-      <li id='desc_li_2' className='p-0 m-0 list-none'>
+      <li className='p-0 m-0 list-none'>
         <p className='mb-8'>
           Additional features that will be included:
           <span>- managing Scrapi</span>
@@ -42,13 +42,13 @@ const ManagerDescription = ({ activeCard }: { activeCard: string }) => {
           </span>
         </p>
       </li>
-      <li id='desc_li_3' className='p-0 m-0 list-none'>
-        <h5 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-grayLight'>
+      <li className='p-0 m-0 list-none'>
+        <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           {data.techUsed.title}
-        </h5>
+        </h6>
       </li>
-      <li id='desc_li_4' className='p-0 m-0 list-none'>
-        <div className='flex gap-3 flex-wrap text-grayLight'>
+      <li className='p-0 m-0 list-none'>
+        <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
           {data.techUsed.tech.map((item, index) => (
             <span
               key={index}

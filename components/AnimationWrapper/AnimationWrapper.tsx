@@ -59,7 +59,7 @@ const AnimationWrapper = ({
           <HalfWidthBgEffect invert={invert} />
           <div
             className={twMerge(
-              'mb-2  md:mb-10 p-2 md:p-8',
+              'relative mb-2 md:mb-10 p-2 md:p-8',
               invert ? 'self-end' : 'self-start'
             )}>
             <SplineEventButton target={splineTarget} setClose={setClose} />

@@ -1,4 +1,4 @@
-import { aboutMeData } from '@/statics/aboutMeData';
+import { aboutMeData } from '../../statics/aboutMeData';
 import LinkedInIcon from '../Icons/LinkedInIcon';
 import Link from 'next/link';
 import GitHubIcon from '../Icons/GitHubIcon';
@@ -25,7 +25,7 @@ const socialLinks = [
 const AboutMeContent = () => {
   const { lineTwo, lineThree, desc } = aboutMeData;
   return (
-    <div className='relative max-w-[50%] w-full h-full flex flex-col items-center px-9 py-12 overflow-hidden text-grayLight'>
+    <div className='relative max-w-[50%] w-full h-full flex flex-col items-center px-9 py-12 overflow-hidden text-[#f0f0f0]'>
       <div className='w-fit text-left'>
         <h2 className='pb-1 text-gradient'>{lineTwo}</h2>
         <h2 className='pb-10 text-gradient'>{lineThree}</h2>

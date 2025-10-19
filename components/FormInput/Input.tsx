@@ -21,7 +21,7 @@ const FormInput = ({ id, className, label, ...props }: InputProps) => {
       <input
         id={id}
         className={twMerge(
-          `outline outline-1 outline-grey500 rounded-md px-4 py-[1.125rem] text-sm text-black500 disabled:outline-grey300 disabled:text-grey500 font-medium w-full placeholder:text-grey500 focus:outline-2 focus:outline-red500`,
+          `outline-1 outline-grey500 rounded-md px-4 py-[1.125rem] text-sm text-black500 disabled:outline-grey300 disabled:text-grey500 font-medium w-full placeholder:text-grey500 focus:outline-2 focus:outline-red500`,
           className
         )}
         {...props}

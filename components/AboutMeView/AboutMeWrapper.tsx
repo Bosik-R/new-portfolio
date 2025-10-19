@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import AnimationWrapper from '@/components/AnimationWrapper/AnimationWrapper';
+import AnimationWrapper from '../../components/AnimationWrapper/AnimationWrapper';
 
 const variants = {
   initial: { x: '-100%', transition: { deley: 1.5, duration: 1.5 } },

@@ -1,6 +1,6 @@
-import { projectCards } from '@/statics/projectCards';
-import { projectsData } from '@/statics/projectsData';
-import { AnimatePresence, motion, useAnimate } from 'framer-motion';
+import { projectCards } from '../../../../statics/projectCards';
+import { projectsData } from '../../../../statics/projectsData';
+import { motion, useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';

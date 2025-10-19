@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';
 import ManagerImageWrapper from './ManagerImageWrapper';
 import { twMerge } from 'tailwind-merge';

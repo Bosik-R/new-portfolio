@@ -1,4 +1,4 @@
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';

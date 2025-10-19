@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../../../statics/projectCards';
 
 const data = {
   techUsed: {
@@ -28,8 +28,8 @@ const ScrapiDescription = ({ activeCard }: { activeCard: string }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCard]);
   return (
-    <ul ref={scope} className='absolute top-14 w-[300px] h-[600px]'>
-      <li id='desc_li_1' className='p-0 m-0 list-none'>
+    <ul ref={scope} className='absolute top-14 w-[300px] h-[600px] list-none'>
+      <li className='p-0 m-0 list-none'>
         <p className='mb-5'>
           The soule of this app is the backend api. Build with node.js and
           express. Its purpose is to scrape popular car retail sites every
@@ -38,20 +38,20 @@ const ScrapiDescription = ({ activeCard }: { activeCard: string }) => {
           interval for scraping and comparing the data.
         </p>
       </li>
-      <li id='desc_li_2' className='p-0 m-0 list-none'>
+      <li className='p-0 m-0'>
         <p className='mb-10'>
           Mobile app uses socket connection to keap the data up to date when the
           app is currently open. When the mobile app is in background or off the
           notifications are send imidietly when a new offer is posted.
         </p>
       </li>
-      <li id='desc_li_3' className='p-0 m-0 list-none'>
-        <h5 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-grayLight'>
+      <li className='p-0 m-0'>
+        <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           {data.techUsed.title}
-        </h5>
+        </h6>
       </li>
-      <li id='desc_li_4' className='p-0 m-0 list-none'>
-        <div className='flex gap-3 flex-wrap text-grayLight'>
+      <li className='p-0 m-0'>
+        <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
           {data.techUsed.tech.map((item, index) => (
             <span
               key={index}

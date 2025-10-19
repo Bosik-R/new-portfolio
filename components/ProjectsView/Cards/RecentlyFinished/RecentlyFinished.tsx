@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../../../statics/projectCards';
 import ScrapiImageWrapper from './ScrapiImageWrapper';
 import ScrapiDescription from './ScrapiDescription';
 

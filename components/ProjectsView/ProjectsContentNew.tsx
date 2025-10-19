@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { AnimatePresence, useAnimate } from 'framer-motion';
+import { useAnimate } from 'framer-motion';
 import '../../styles/projectsGrid.css';
 import RecentlyFinished from './Cards/RecentlyFinished/RecentlyFinished';
-import { projectCards } from '@/statics/projectCards';
+import { projectCards } from '../../statics/projectCards';
 import CurrentWork from './Cards/CurrentWork/CurrentWork';
 import PreviousWork from './Cards/PreviousWork/PreviousWork';
 

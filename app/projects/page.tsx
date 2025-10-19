@@ -1,6 +1,5 @@
-import ProjectsContent from '@/components/ProjectsView/ProjectsContent';
-import ProjectsContentNew from '@/components/ProjectsView/ProjectsContentNew';
-import ProjectsWrapper from '@/components/ProjectsView/ProjectsWrapper';
+import ProjectsContentNew from '../../components/ProjectsView/ProjectsContentNew';
+import ProjectsWrapper from '../../components/ProjectsView/ProjectsWrapper';
 
 const Projects = () => {
   return (

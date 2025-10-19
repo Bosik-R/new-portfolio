@@ -1,13 +1,13 @@
-import { experienced, triedOut } from '@/statics/skillsData';
+import { experienced, triedOut } from '../../statics/skillsData';
 
 const SkillsContent = () => {
   return (
-    <div className='flex flex-col gap-16'>
+    <div className='flex flex-col gap-16 relative z-50'>
       <div>
-        <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-grayLight'>
+        <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           experienced
         </h5>
-        <div className='flex gap-4 flex-wrap text-grayLight'>
+        <div className='flex gap-4 flex-wrap text-[#f0f0f0]'>
           {experienced.map((item, index) => (
             <span key={index} className='skill-glass-chip px-5 py-2 w-fit'>
               {item}
@@ -16,10 +16,10 @@ const SkillsContent = () => {
         </div>
       </div>
       <div>
-        <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-grayLight'>
+        <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           tried out
         </h5>
-        <div className='flex gap-3 flex-wrap text-grayLight'>
+        <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
           {triedOut.map((item, index) => (
             <span key={index} className='skill-glass-chip px-5 py-2 w-fit'>
               {item}

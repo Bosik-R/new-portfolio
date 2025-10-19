@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCardInactive from './ProjectCardInactive';
 import ProjectCardActive from './ProjectCardActive';
-import { projectsData } from '@/statics/projectsData';
+import { projectsData } from '../../statics/projectsData';
 import '../../styles/projectsGrid.css';
 
 const ProjectsContent = () => {

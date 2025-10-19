@@ -1,10 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 body {
   background: #040011;
   color: #f0f0f0;
+}
+
+ul {
+  list-style-type: none;
+  list-style: none;
 }
 
 .left-side-half-width-gradient {
@@ -85,11 +88,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
 }
 
-li {
-  list-style-type: disc;
-  padding-bottom: 1rem;
-}
-
 a {
   color: inherit;
   text-decoration: inherit;
@@ -99,7 +97,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-style: normal;
   font-weight: 700;
   line-height: 120%;

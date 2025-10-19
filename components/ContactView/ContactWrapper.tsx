@@ -1,6 +1,6 @@
 'use client';
 
-import SplineEventButton from '@/components/Buttons/SplineEventButton';
+import SplineEventButton from '../../components/Buttons/SplineEventButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import FullPageBgEffect from '../Features/FullPageBgEffect';
@@ -21,8 +21,8 @@ const ContactWrapper = ({ children }: { children: React.ReactNode }) => {
             clipPath: 'circle(0% at 50% 50%)',
             transition: { duration: 0.5, delay: 0 },
           }}
-          className='absolute top-0 left-0 w-full h-full flex justify-center items-center z-20 bg-mainBg'>
-          <div className='absolute top-12 right-20 z-30 text-grayLight'>
+          className='absolute top-0 left-0 w-full h-full flex justify-center items-center z-20 bg-[#040011]'>
+          <div className='absolute top-12 right-20 z-30 text-[#f0f0f0]'>
             <SplineEventButton
               target={'contactMeReverse'}
               setClose={setClose}
