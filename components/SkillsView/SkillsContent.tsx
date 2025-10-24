@@ -7,9 +7,11 @@ const SkillsContent = () => {
         <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           experienced
         </h5>
-        <div className='flex gap-4 flex-wrap text-[#f0f0f0]'>
+        <div className='flex gap-4 flex-wrap text-white'>
           {experienced.map((item, index) => (
-            <span key={index} className='skill-glass-chip px-5 py-2 w-fit'>
+            <span
+              key={index}
+              className='skill-glass-chip w-fit px-3 py-1 2xl:px-5 2xl:py-2 text-[12px] text-white'>
               {item}
             </span>
           ))}
@@ -19,9 +21,11 @@ const SkillsContent = () => {
         <h5 className='border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
           tried out
         </h5>
-        <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
+        <div className='flex gap-3 flex-wrap text-white'>
           {triedOut.map((item, index) => (
-            <span key={index} className='skill-glass-chip px-5 py-2 w-fit'>
+            <span
+              key={index}
+              className='skill-glass-chip w-fit px-3 py-1 2xl:px-5 2xl:py-2 text-[12px]'>
               {item}
             </span>
           ))}

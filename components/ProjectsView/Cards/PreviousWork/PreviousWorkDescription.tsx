@@ -16,12 +16,12 @@ const PreviousWorkDescription = ({ project }: { project: ProjectTypes }) => {
     <AnimatePresence mode='wait'>
       {project && (
         <motion.ul
-          className='relative bold text-3xl w-full h-fit'
+          className='relative bold text-3xl w-full h-fit pr-3'
           key={project.id}
           layout
           initial={{ left: -550, opacity: 0, filter: 'blur(10px)' }}
           animate={{
-            left: 0,
+            left: 30,
             opacity: 1,
             filter: 'blur(0px)',
             transition: { duration: 0.6 },
@@ -33,10 +33,10 @@ const PreviousWorkDescription = ({ project }: { project: ProjectTypes }) => {
             transition: { duration: 0.6 },
           }}>
           <li className='p-0 m-0'>
-            <p className='mb-5'>{project.title}</p>
+            <h5 className='mb-5 font-semibold'>{project.title}</h5>
           </li>
           <li className='p-0 m-0'>
-            <p className='mb-10'>{project.text}</p>
+            <p className='mb-5'>{project.text}</p>
           </li>
           <li className='p-0 m-0'>
             <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
@@ -58,7 +58,7 @@ const PreviousWorkDescription = ({ project }: { project: ProjectTypes }) => {
             <li>
               <Link
                 href={project.link}
-                className='underline text-base'
+                className='underline border-b text-base'
                 target='_blank'>
                 view page
               </Link>

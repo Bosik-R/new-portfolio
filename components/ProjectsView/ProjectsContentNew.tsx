@@ -8,6 +8,7 @@ import RecentlyFinished from './Cards/RecentlyFinished/RecentlyFinished';
 import { projectCards } from '../../statics/projectCards';
 import CurrentWork from './Cards/CurrentWork/CurrentWork';
 import PreviousWork from './Cards/PreviousWork/PreviousWork';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 const ProjectsContentNew = () => {
   const [activeCard, setActiveCard] = useState({
@@ -16,19 +17,24 @@ const ProjectsContentNew = () => {
   });
 
   const [scope, animate] = useAnimate();
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   const handleAnimateOne = async () => {
     if (activeCard.new === projectCards.RECENTLY_FINISHED) return;
 
     animate(
       '#card3',
-      { width: 340, height: 365, right: 0 },
+      { width: 340, height: isSmallDevice ? 250 : 365, right: 0 },
       { duration: 0.14 }
     );
-    animate('#card2', { width: 340, height: 365 }, { duration: 0.15 });
+    animate(
+      '#card2',
+      { width: 340, height: isSmallDevice ? 250 : 365 },
+      { duration: 0.15 }
+    );
     await animate(
       '#card1',
-      { width: 690, height: 750, left: 0 },
+      { width: 690, height: '100%', left: 0 },
       { delay: 0.2, duration: 0.1 }
     );
 
@@ -41,15 +47,19 @@ const ProjectsContentNew = () => {
   const handleAnimateTwo = async () => {
     if (activeCard.new === projectCards.CURRENT_WORKING_ON) return;
 
-    animate('#card1', { width: 340, height: 365, left: 0 }, { duration: 0.05 });
+    animate(
+      '#card1',
+      { width: 340, height: isSmallDevice ? 250 : 365, left: 0 },
+      { duration: 0.05 }
+    );
     animate(
       '#card3',
-      { width: 340, height: 365, right: 710 },
+      { width: 340, height: isSmallDevice ? 250 : 365, right: 710 },
       { duration: 0.05 }
     );
     animate(
       '#card2',
-      { width: 690, height: 750 },
+      { width: 690, height: '100%' },
       { duration: 0.05, delay: 0.2, ease: 'backIn' }
     );
     setActiveCard({
@@ -63,13 +73,17 @@ const ProjectsContentNew = () => {
     const cardsMovement = () => {
       animate(
         '#card1',
-        { width: 515, height: 240, left: 0 },
+        { width: 515, height: isSmallDevice ? 180 : 240, left: 0 },
         { duration: 0.1 }
       );
-      animate('#card2', { width: 515, height: 240 }, { duration: 0.1 });
+      animate(
+        '#card2',
+        { width: 515, height: isSmallDevice ? 180 : 240 },
+        { duration: 0.1 }
+      );
       animate(
         '#card3',
-        { width: 1050, height: 490, right: 0 },
+        { width: 1050, height: isSmallDevice ? 330 : 490, right: 0 },
         { delay: 0.2, duration: 0.1 }
       );
       setActiveCard({
@@ -81,15 +95,17 @@ const ProjectsContentNew = () => {
   };
 
   return (
-    <div ref={scope} className='relative max-w-[1050px] w-full h-[750px]'>
+    <div
+      ref={scope}
+      className='relative max-w-[1050px] w-full h-full max-h-[530px] 2xl:max-h-[750px] '>
       <article
         id='card1'
         onClick={() => handleAnimateOne()}
         className={twMerge(
-          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-full max-w-[690px] h-[750px] top-0 left-0',
+          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-full max-w-[690px] h-full top-0 left-0 overflow-hidden',
           activeCard.new === projectCards.RECENTLY_FINISHED
-            ? 'py-8 px-8 opacity-100 cursor-default'
-            : 'py-4 px-4 cursor-pointer'
+            ? 'opacity-100 cursor-default'
+            : 'cursor-pointer'
         )}>
         <RecentlyFinished activeCard={activeCard.new} />
       </article>
@@ -97,7 +113,7 @@ const ProjectsContentNew = () => {
         id='card2'
         onClick={() => handleAnimateTwo()}
         className={twMerge(
-          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-[340px] h-[365px] top-0 right-0',
+          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-[340px] h-[250px] 2xl:h-[365px] top-0 right-0 overflow-hidden',
           activeCard.new === projectCards.CURRENT_WORKING_ON
             ? 'opacity-100 cursor-default'
             : 'cursor-pointer'
@@ -108,7 +124,7 @@ const ProjectsContentNew = () => {
         id='card3'
         onClick={() => handleAnimateThree()}
         className={twMerge(
-          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-[340px] h-[365px] bottom-0 right-0',
+          'absolute project-glass-card text-white opacity-75 hover:opacity-100 w-[340px] h-[250px] 2xl:h-[365px] bottom-0 right-0 overflow-hidden',
           activeCard.new === projectCards.PREVIOUSE_PROJECTS
             ? 'opacity-100 cursor-default'
             : 'cursor-pointer'

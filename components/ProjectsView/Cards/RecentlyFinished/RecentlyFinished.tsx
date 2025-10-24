@@ -5,36 +5,69 @@ import { twMerge } from 'tailwind-merge';
 import { projectCards } from '../../../../statics/projectCards';
 import ScrapiImageWrapper from './ScrapiImageWrapper';
 import ScrapiDescription from './ScrapiDescription';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 const RecentlyFinished = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     const animation = async () => {
       if (activeCard === projectCards.RECENTLY_FINISHED) {
-        animate('#scrapi_title', { top: 20, left: 50, scale: 1 });
+        animate('#scrapi_title', {
+          top: isSmallDevice ? 25 : 40,
+          left: isSmallDevice ? 20 : 70,
+          scale: 1,
+        });
         animate(
           '#card1_title_1',
-          { left: '61%', top: 0, scale: 0.5 },
+          { right: 77, top: 20, scale: 0.5 },
           { duration: 0.5 }
         );
         await animate(
           '#card1_title_2',
-          { left: '78%', top: 0, scale: 0.5 },
+          { right: -16, top: 20, scale: 0.5 },
           { duration: 0.5 }
         );
-        animate('#underline', { right: 5 });
+        animate('#underline', { right: 25 });
+      } else if (activeCard === projectCards.PREVIOUSE_PROJECTS) {
+        animate('#scrapi_title', {
+          top: 100,
+          left: 150,
+          scale: 0.5,
+        });
+
+        await animate('#underline', { right: -240 }, { duration: 0.2 });
+
+        animate(
+          '#card1_title_1',
+          { right: 295, top: 25, scale: 1 },
+          { duration: 0.5 }
+        );
+
+        await animate(
+          '#card1_title_2',
+          { right: isSmallDevice ? 314 : 164, top: 58, scale: 1 },
+          { duration: 0.5 }
+        );
       } else {
-        animate('#scrapi_title', { top: 74, left: 60, scale: 0.5 });
-        await animate('#underline', { right: -200 }, { duration: 0.2 });
+        animate('#scrapi_title', {
+          top: isSmallDevice ? 120 : 80,
+          left: isSmallDevice ? 150 : 80,
+          scale: 0.5,
+        });
+
+        await animate('#underline', { right: -240 }, { duration: 0.2 });
+
         animate(
           '#card1_title_1',
-          { left: '5%', top: 5, scale: 1 },
+          { right: 120, top: 22, scale: 1 },
           { duration: 0.5 }
         );
+
         await animate(
           '#card1_title_2',
-          { left: '5%', top: 34, scale: 1 },
+          { right: 139, top: 54, scale: 1 },
           { duration: 0.5 }
         );
       }
@@ -48,10 +81,10 @@ const RecentlyFinished = ({ activeCard }: { activeCard: string }) => {
   return (
     <div
       ref={scope}
-      className='w-full h-full relative text-3xl overflow-hidden'>
+      className='w-full h-full relative overflow-hidden text-3xl'>
       <span
         id='underline'
-        className='absolute top-[28px] h-[2px] bg-white w-[197px]'></span>
+        className='absolute top-[47px] h-[2px] bg-white w-[200px]'></span>
       <h6
         id='card1_title_1'
         className={twMerge(

@@ -57,7 +57,7 @@ const ContactForm = () => {
       </div>
       <button
         type='submit'
-        className='w-full font-semibold tracking-[2px] text-xl text-[#f0f0f0] rounded-lg px-5 py-2 hover:text-[#040011] border border-[#f0f0f0] hover:font-extrabold hover:bg-[#f0f0f0] duration-300'>
+        className='w-full font-semibold tracking-[2px] text-xl text-[#f0f0f0] rounded-lg px-5 py-2 hover:text-[#040011] border border-[#f0f0f0] hover:font-extrabold hover:bg-[#f0f0f0] duration-300 cursor-pointer'>
         send message
       </button>
       {message ? (

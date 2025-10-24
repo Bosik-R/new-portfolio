@@ -1,26 +1,28 @@
 import { projectCards } from '../../../../statics/projectCards';
-import { projectsData } from '../../../../statics/projectsData';
+import { previousProjectsData } from '../../../../statics/projectsData';
 import { motion, useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import PreviousWorkDescription from './PreviousWorkDescription';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
-const mapedProjectsIds = projectsData.map((project) => project.id);
+const mapedProjectsIds = previousProjectsData.map((project) => project.id);
 
 const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
-  const [currentProject, setCurrentProject] = useState(projectsData[0]);
+  const [currentProject, setCurrentProject] = useState(previousProjectsData[0]);
   const [animationProjectsIds, setAnimationProjectsIds] =
     useState(mapedProjectsIds);
   const [scope, animate] = useAnimate();
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     if (activeCard === projectCards.PREVIOUSE_PROJECTS) {
       animate(
         '#previous_projects_images',
         {
-          right: 0,
-          bottom: 0,
+          right: isSmallDevice ? 120 : 25,
+          bottom: isSmallDevice ? 5 : 20,
           rotateX: 2,
           rotateY: 4,
           rotateZ: 2,
@@ -48,7 +50,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
         '#previous_projects_images',
         {
           right: 0,
-          bottom: 0,
+          bottom: -70,
           rotateX: 38,
           rotateY: 7,
           rotateZ: 2,
@@ -68,7 +70,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
         '#previous_projects_images',
         {
           right: 0,
-          bottom: 0,
+          bottom: -70,
           rotateX: 38,
           rotateY: 7,
           rotateZ: 2,
@@ -82,22 +84,29 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
 
   const handleClick = async () => {
     if (activeCard !== projectCards.PREVIOUSE_PROJECTS) return;
-    const current = projectsData.find(
+    const current = previousProjectsData.find(
       (project) => project.id === animationProjectsIds[1]
     );
 
     setCurrentProject(current!);
 
-    await animate(
+    animate(
       `#project_${animationProjectsIds[0]}`,
       {
-        top: -40,
-        left: -40,
-        opacity: 0,
+        top: isSmallDevice ? -5 : -40,
+        left: isSmallDevice ? -60 : -40,
+        opacity: 1,
         filter: 'blur(15px)',
         zIndex: 10,
       },
       { duration: 0.6 }
+    );
+    await animate(
+      `#project_${animationProjectsIds[0]}`,
+      {
+        opacity: 0,
+      },
+      { duration: 0.3, delay: 0.3 }
     );
     animate(
       `#project_${animationProjectsIds[1]}`,
@@ -113,8 +122,8 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     animate(
       `#project_${animationProjectsIds[2]}`,
       {
-        top: 30,
-        left: 30,
+        top: isSmallDevice ? 5 : 30,
+        left: isSmallDevice ? 45 : 30,
         filter: 'blur(0px)',
         opacity: 1,
         zIndex: 8,
@@ -124,8 +133,8 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     animate(
       `#project_${animationProjectsIds[3]}`,
       {
-        top: 60,
-        left: 60,
+        top: isSmallDevice ? 10 : 60,
+        left: isSmallDevice ? 90 : 60,
         filter: 'blur(0px)',
         opacity: 1,
         zIndex: 7,
@@ -135,10 +144,10 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     animate(
       `#project_${animationProjectsIds[4]}`,
       {
-        top: 90,
-        left: 90,
-        opacity: 0.8,
-        filter: 'blur(0px)',
+        top: isSmallDevice ? 15 : 90,
+        left: isSmallDevice ? 125 : 90,
+        opacity: 1,
+        filter: 'blur(1px)',
         zIndex: 6,
       },
       { duration: 0.6 }
@@ -146,19 +155,19 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     animate(
       `#project_${animationProjectsIds[5]}`,
       {
-        top: 120,
-        left: 120,
-        opacity: 0,
-        zIndex: 0,
-        filter: 'blur(0px)',
+        top: isSmallDevice ? 20 : 120,
+        left: isSmallDevice ? 170 : 120,
+        opacity: 0.9,
+        zIndex: 5,
+        filter: 'blur(1px)',
       },
       { duration: 0.6 }
     );
     animate(
       `#project_${animationProjectsIds[6]}`,
       {
-        top: 120,
-        left: 120,
+        top: isSmallDevice ? 25 : 150,
+        left: isSmallDevice ? 215 : 150,
         opacity: 0,
         zIndex: 0,
         filter: 'blur(0px)',
@@ -168,8 +177,8 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     await animate(
       `#project_${animationProjectsIds[7]}`,
       {
-        top: 120,
-        left: 120,
+        top: isSmallDevice ? 25 : 150,
+        left: isSmallDevice ? 215 : 150,
         opacity: 0,
         zIndex: 0,
         filter: 'blur(0px)',
@@ -179,8 +188,8 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     animate(
       `#project_${animationProjectsIds[0]}`,
       {
-        top: 120,
-        left: 120,
+        top: isSmallDevice ? 25 : 150,
+        left: isSmallDevice ? 215 : 150,
         opacity: 0,
         zIndex: 0,
         filter: 'blur(0px)',
@@ -195,16 +204,16 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
   };
 
   return (
-    <motion.div ref={scope} className='relative w-full'>
+    <motion.div ref={scope} className='relative w-full h-full'>
       <div
         id='previous_project_desc'
-        className='relative overflow-hidden mt-10 max-w-[450px] w-full'>
+        className='relative overflow-hidden pt-5 2xl:pt-10 max-w-[48%] w-full'>
         <PreviousWorkDescription project={currentProject} />
       </div>
       <div
         id='previous_projects_images'
-        className='absolute right-0 top-7 max-w-[440px] w-full h-[330px] cursor-pointer'>
-        {projectsData.map((project, index) => (
+        className='absolute max-w-[370px] 2xl:max-w-[440px] w-full h-[260px] 2xl:h-[330px] cursor-pointer'>
+        {previousProjectsData.map((project, index) => (
           <Image
             id={`project_${project.id}`}
             key={index}
@@ -214,11 +223,11 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
             height={220}
             src={project.image}
             className={twMerge(
-              'absolute overflow-hidden rounded-lg z-auto w-[280px] h-[220px]  shadow-2xl'
+              'absolute overflow-hidden rounded-lg z-auto w-[280px] h-[220px] project_images_shadow'
             )}
             style={{
-              top: `${index * 30}px`,
-              left: `${index * 30}px`,
+              top: `${index * (isSmallDevice ? 5 : 30)}px`,
+              left: `${index * (isSmallDevice ? 45 : 30)}px`,
               zIndex: 10 - index,
               opacity: index > 3 ? (index === 4 ? 0.8 : 0) : 1,
             }}

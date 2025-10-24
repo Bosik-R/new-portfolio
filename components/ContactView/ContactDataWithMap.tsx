@@ -5,14 +5,16 @@ import Link from 'next/link';
 const ContactDataWithMap = () => {
   return (
     <div className='relative max-w-[500px] w-full z-50'>
-      <iframe
-        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d299389.4180194394!2d18.68556388574913!3d51.603734658369454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471af589786a817f%3A0x29bb12c99326d34e!2sSieradz!5e0!3m2!1spl!2spl!4v1760809639751!5m2!1spl!2spl'
-        width='500'
-        height='250'
-        style={{ border: 0 }}
-        loading='lazy'
-        referrerPolicy='no-referrer-when-downgrade'
-        className='rounded-lg overflow-hidden mb-8'></iframe>
+      <div className='w-[500px] h-[250px] glass-card rounded-lg mb-8'>
+        <iframe
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d299389.4180194394!2d18.68556388574913!3d51.603734658369454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471af589786a817f%3A0x29bb12c99326d34e!2sSieradz!5e0!3m2!1spl!2spl!4v1760809639751!5m2!1spl!2spl'
+          width='500'
+          height='250'
+          style={{ border: 0 }}
+          loading='lazy'
+          referrerPolicy='no-referrer-when-downgrade'
+          className='rounded-lg overflow-hidden'></iframe>
+      </div>
       <ul className='flex gap-4 justify-between flex-wrap gap-row-6 flex-col list-none'>
         <li className='list-none p-0 m-0'>
           <Link

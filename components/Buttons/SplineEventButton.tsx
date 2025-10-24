@@ -29,7 +29,7 @@ const SplineEventButton = ({ target, setClose }: SplineEventButtonProps) => {
       initial={{ y: '-1000%' }}
       animate={{ y: '0' }}
       transition={{ delay: 0.8, duration: 0.5 }}
-      className='font-semibold tracking-[2px] text-xl text-[#f0f0f0] rounded-xl px-5 py-2 hover:text-[#040011] border-[2px] border-[#f0f0f0] hover:font-extrabold hover:bg-[#f0f0f0]'
+      className='font-semibold tracking-[2px] 2xl:text-xl text-base text-[#f0f0f0] rounded-xl px-5 py-2 hover:text-[#040011] border-[2px] border-[#f0f0f0] hover:font-extrabold hover:bg-[#f0f0f0]'
       onClick={handleClick}>
       BACK
     </motion.button>

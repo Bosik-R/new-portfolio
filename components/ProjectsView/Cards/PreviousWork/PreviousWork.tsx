@@ -49,8 +49,8 @@ const PreviousWork = ({ activeCard }: { activeCard: string }) => {
       className={twMerge(
         'relative overflow-hidden w-full h-full text-3xl',
         activeCard === projectCards.PREVIOUSE_PROJECTS
-          ? 'py-8 px-8 opacity-100 cursor-default'
-          : 'py-4 px-4 cursor-pointer'
+          ? 'opacity-100 cursor-default'
+          : 'cursor-pointer'
       )}>
       <span
         id='underline'

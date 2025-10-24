@@ -1,4 +1,4 @@
-export const projectsData = [
+export const previousProjectsData = [
   {
     id: 1,
     image: '/images/portfolio.webp',
@@ -102,3 +102,44 @@ export const projectsData = [
     tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Express'],
   },
 ];
+
+export const scrapiProjectData = {
+  desc: {
+    pOne: `The soule of this app is the backend api, that is build with node.js
+          and express. Its purpose is to scrape popular car retail sites, find
+          the newest entries and send them to the mobile app via socket
+          connection and expo notification. I used node-cron to set one minute
+          interval for scraping and comparing the data.`,
+    pTwo: `The mobile app uses socket connection to keap the data up to date when
+          the app is currently open. When the mobile app is in background or
+          turned off the expo notifications keap the user informed when a new
+          offers are posted.`,
+  },
+  techUsed: {
+    title: 'tech used',
+    tech: [
+      'expo react native',
+      'expo notification',
+      'tailwind',
+      'socket.io',
+      'node.js',
+      'express',
+      'mongoDB',
+      'mongoose',
+    ],
+  },
+};
+
+export const managerProjectData = {
+  desc: {
+    pOne: `Vehicles stock manager. Add, edit vehicles data and files. View data
+        from the web scraper Scrapi database.`,
+    listItemOne: `Additional features that will be included:`,
+    listItemTwo: `- managing Scrapi`,
+    listItemThree: `- integration witch otomoto API`,
+  },
+  techUsed: {
+    title: 'tech used',
+    tech: ['next.js', 'shadcn', 'tailwind', 'socket.io', 'mongoDB', 'mongoose'],
+  },
+};

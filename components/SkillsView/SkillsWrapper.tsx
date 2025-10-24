@@ -11,7 +11,7 @@ const SkillsWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <AnimationWrapper variants={variants} invert splineTarget='skillsReverse'>
       <div className='relative w-full h-fit md:w-1/2 p-4 md:p-12 overflow-auto'>
-        <div className='flex flex-col gap-20 text-gray-400 justify-center'>
+        <div className='flex flex-col gap-20 text-white justify-center'>
           {children}
         </div>
       </div>

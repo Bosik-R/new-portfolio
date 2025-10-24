@@ -5,11 +5,11 @@ import { twMerge } from 'tailwind-merge';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCardInactive from './ProjectCardInactive';
 import ProjectCardActive from './ProjectCardActive';
-import { projectsData } from '../../statics/projectsData';
+import { previousProjectsData } from '../../statics/projectsData';
 import '../../styles/projectsGrid.css';
 
 const ProjectsContent = () => {
-  const [projectsArray, setProjectsArray] = useState(projectsData);
+  const [projectsArray, setProjectsArray] = useState(previousProjectsData);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
     null
   );
@@ -27,7 +27,6 @@ const ProjectsContent = () => {
     }
   };
 
-  //TODO add scroll to top after selecting project (usefull in mobile)
   const handleSelectProject = (projectId: number) => {
     if (selectedProjectId === projectId) {
       setSelectedProjectId(null);

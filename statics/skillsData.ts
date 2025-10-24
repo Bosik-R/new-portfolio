@@ -4,7 +4,7 @@ export const experienced = [
   'React Query',
   'React Hook Form',
   'Redux',
-  'RTK',
+  'Redux Tool Kit',
   'GraphQL',
   'Styled Components',
   'Tailwind',
@@ -13,6 +13,10 @@ export const experienced = [
   'Axios',
   'MaterialUI',
   'Yup',
+  'Expo React Native',
+  'Spline',
+  'Node.js',
+  'MongoDB',
 ] as const;
 
 export const triedOut = [

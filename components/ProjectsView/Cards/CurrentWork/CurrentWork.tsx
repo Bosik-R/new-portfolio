@@ -6,16 +6,23 @@ import { useAnimate } from 'framer-motion';
 import ManagerImageWrapper from './ManagerImageWrapper';
 import { twMerge } from 'tailwind-merge';
 import ManagerDescription from './ManagerDescription';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 const CurrentWork = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     const animation = async () => {
       if (activeCard === projectCards.CURRENT_WORKING_ON) {
         animate(
           '#manager_title',
-          { left: 42, top: 40, scale: 1, width: 440 },
+          {
+            left: isSmallDevice ? 25 : 42,
+            top: isSmallDevice ? 20 : 40,
+            scale: 1,
+            width: 440,
+          },
           { duration: 0.5 }
         );
         animate(
@@ -32,7 +39,12 @@ const CurrentWork = ({ activeCard }: { activeCard: string }) => {
       } else {
         animate(
           '#manager_title',
-          { left: -10, top: 90, scale: 0.5, width: 251 },
+          {
+            left: activeCard === projectCards.PREVIOUSE_PROJECTS ? 0 : 50,
+            top: 100,
+            scale: 0.5,
+            width: 251,
+          },
           { duration: 0.5 }
         );
         await animate('#underline', { right: -200 }, { duration: 0.2 });
@@ -60,8 +72,8 @@ const CurrentWork = ({ activeCard }: { activeCard: string }) => {
       className={twMerge(
         'relative overflow-hidden w-full h-full text-3xl',
         activeCard === projectCards.CURRENT_WORKING_ON
-          ? 'py-8 px-8 opacity-100 cursor-default'
-          : 'py-4 px-4 cursor-pointer'
+          ? 'opacity-100 cursor-default'
+          : 'cursor-pointer'
       )}>
       <span
         id='underline'
@@ -77,7 +89,7 @@ const CurrentWork = ({ activeCard }: { activeCard: string }) => {
         Work
       </h6>
       <ManagerImageWrapper activeCard={activeCard} />
-      <h2 id='manager_title' className='absolute font-bold'>
+      <h2 id='manager_title' className='absolute font-bold w-fit'>
         DASHBOARD
       </h2>
       <ManagerDescription activeCard={activeCard} />

@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@uidotdev/usehooks';
 import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';
 import Image from 'next/image';
@@ -6,18 +7,19 @@ import { useEffect, useState } from 'react';
 const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
   const [activeImage, setActiveImage] = useState({ current: 1, prev: 2 });
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     if (activeCard === projectCards.RECENTLY_FINISHED) {
       animate(
         scope.current,
         {
-          left: 0,
+          left: 10,
           rotateX: 8,
           rotateY: 4,
           rotateZ: -2,
           scale: 1,
-          top: 130,
+          top: isSmallDevice ? 80 : 130,
         },
         { duration: 0.5 }
       );
@@ -25,12 +27,12 @@ const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
       animate(
         scope.current,
         {
-          left: 200,
+          top: isSmallDevice ? -135 : -160,
+          left: isSmallDevice ? 250 : 200,
           rotateX: 52,
           rotateY: 9,
           rotateZ: -19,
           scale: 0.5,
-          top: -160,
           zIndex: 2,
         },
         { duration: 0.4 }
@@ -91,14 +93,14 @@ const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
     <div
       ref={scope}
       id='imagesWrapper'
-      className='absolute w-[270px] h-[550px] cursor-pointer'
+      className='absolute w-[200px] 2xl:w-[270px] h-[470px] 2xl:h-[550px] cursor-pointer'
       onClick={() => handleImageClick()}>
       <Image
         priority
         id='scrapi_image_1'
         width={247}
         height={513}
-        src='/images/scrapi.webp'
+        src='/images/scrapi_1.webp'
         className='absolute top-[0px] left-[40px] z-20 overflow-hidden rounded-lg'
         alt='scrapi image'
       />
@@ -107,7 +109,7 @@ const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
         id='scrapi_image_2'
         width={247}
         height={513}
-        src='/images/scrapi.webp'
+        src='/images/scrapi_2.webp'
         className='absolute top-[20px] left-[20px] z-10 opacity-50 overflow-hidden rounded-lg'
         alt='scrapi image'
       />
