@@ -9,20 +9,22 @@ const ManagerDescription = ({ activeCard }: { activeCard: string }) => {
 
   useEffect(() => {
     if (activeCard === projectCards.CURRENT_WORKING_ON) {
-      animate(scope.current, { bottom: 35 }, { delay: 0.2, duration: 0.3 });
+      animate(scope.current, { bottom: 0 }, { delay: 0.2, duration: 0.3 });
     } else {
-      animate(scope.current, { bottom: -600 }, { duration: 0.1 });
+      animate(scope.current, { bottom: -600 }, { duration: 0.2 });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCard]);
 
   return (
-    <div ref={scope} className='absolute left-[25px] w-[90%] h-fit text-base'>
-      <p className='mb-5 w-[240px] 2xl:w-full'>{desc.pOne}</p>
-      <ul>
-        <li className='mb-2 w-[240px] 2xl:w-full'>{desc.listItemOne}</li>
-        <li className='mb-2 w-[240px] 2xl:w-full'>{desc.listItemTwo}</li>
-        <li className='mb-5 w-[240px] 2xl:w-full'>{desc.listItemThree}</li>
+    <div
+      ref={scope}
+      className='absolute left-[25px] w-[90%] h-full text-base pt-24 flex flex-col justify-between 2xl:justify-end pb-8'>
+      <div className='mb-5 w-[230px] 2xl:w-full'>
+        <p className='mb-5'>{desc.pOne}</p>
+        <p>{desc.pTwo}</p>
+      </div>
+      <ul className='align-bottom'>
         <li className='p-0 m-0'>
           <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
             {techUsed.title}

@@ -34,7 +34,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
       animate(
         '#previous_project_desc',
         {
-          left: 0,
+          left: 30,
         },
         { duration: 0.4, delay: 0.4 }
       );
@@ -208,7 +208,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
     <motion.div ref={scope} className='relative w-full h-full'>
       <div
         id='previous_project_desc'
-        className='relative overflow-hidden pt-5 2xl:pt-10 max-w-[48%] w-full'>
+        className='relative overflow-hidden pt-5 2xl:pt-8 max-w-[48%] w-full h-full'>
         <PreviousWorkDescription project={currentProject} />
       </div>
       <div

@@ -4,8 +4,7 @@ export const previousProjectsData = [
     image: '/images/portfolio.webp',
     title: 'Portfolio',
     subtitle: 'Webpage / 3D Modeling',
-    text: `I built this 3D integrated wepsite using Spline and Next.js. I chose Spline for 3D modelling because it's a quick way to create 3d scenes with states and events. 
-           I took advantage of server components as much as possible.`,
+    text: `I built this 3D portfolio website using Next.js and Spline. Spline allows me to design and prototype 3D scenes directly in its editor, and then integrate and control those scenes programmatically within the application. This approach enables real-time interaction between the 3D environment and the website’s UI. The site also utilizes Framer Motion for advanced animations and smooth transitions, providing a dynamic and visually engaging user experience`,
     tech: ['Next.js', 'Spline', 'Typescript', 'Tailwind', 'Framer Motion'],
   },
   {
@@ -13,7 +12,7 @@ export const previousProjectsData = [
     image: '/images/tamtuweb.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Webpage',
-    text: 'It was my individual project created by using Next.js(14). The page content is fetched by Axios and GraphQL from DirectusCMS. The subscription form is handled by React Hook Form.',
+    text: `This was an individual project developed with Next.js, leveraging SSR for improved performance, SEO, and initial page load speed. The website content is prefetched from Directus CMS via Axios and GraphQL, allowing for flexible and scalable content management. The subscription form is implemented using React Hook Form for efficient state management and validation. I focused on delivering a well-optimized website with a high SEO score, clean architecture, and smooth user experience.`,
     link: 'https://tamtu.com.pl/',
 
     tech: [
@@ -32,7 +31,7 @@ export const previousProjectsData = [
     image: '/images/tamtu.webp',
     title: 'Tamtu Multi City Games',
     subtitle: 'Management application',
-    text: 'I joined the team during project development. I was responsible for the part involving creating and managing users and subscriptions.',
+    text: `I joined the team during the project development phase. I was responsible for the module handling the creation and management of both dashboard users and player accounts, as well as subscription management. The application allows managing a city games system and was built using React, with communication to the backend handled via Axios. All forms were implemented using React Hook Form.`,
     tech: [
       'React.js',
       'Typescript',
@@ -47,16 +46,17 @@ export const previousProjectsData = [
     image: '/images/skydental.webp',
     title: 'Skydental',
     subtitle: 'Webpage',
-    text: 'A beautiful modern webpage which I build independently. It has a nice looking particles effect.',
+    text: 'Independently developed a modern Next.js application with server-side and static rendering capabilities. Content is prefetched from Directus CMS using graphql-request and cached globally via React Query for optimized state management. Styling is handled with Styled-Components, and a custom particles effect is implemented for interactive UI enhancements. The architecture emphasizes modularity, reusability, and performance optimization.',
     link: 'https://skydentalclinic.pl/',
     tech: [
       'Next.js',
       'Typescript',
-      'Styled Components',
-      'React Query',
-      'GraphQL',
       'Directus',
+      'GraphQL',
+      'GraphQL-request',
+      'React Query',
       'Framer Motion',
+      'Styled Components',
     ],
   },
   {
@@ -64,7 +64,7 @@ export const previousProjectsData = [
     image: '/images/brainforge.webp',
     title: 'BrainforgeIT',
     subtitle: 'webpage',
-    text: 'It was my first webpage that was presented to the general public. I felt a rush of excitement, seeing my creation came alive.',
+    text: `Built my first publicly released Next.js webpage, utilizing React Query for state management, GraphQL for data fetching, Directus CMS for content management, Styled-Components for styling, and Framer Motion for animations. Experiencing the project go live was an exciting milestone, showcasing the practical application of my skills in a real-world environment.`,
     link: 'https://brainforgeit.com/',
     tech: [
       'Next.js',
@@ -81,7 +81,7 @@ export const previousProjectsData = [
     image: '/images/furgonetka.webp',
     title: 'Portmonetka',
     subtitle: 'checkout plugin',
-    text: `It was my first individual project. I was resposible for crafting a front-end MVP. I knew that this was just the beginning of a remarkable adventure in the world of web development.`,
+    text: `Built my first individual project, developing a React front-end MVP for a checkout plugin. Responsible for managing cart content, delivery options, and payment methods, implementing a functional and user-friendly interface. This project marked the beginning of my journey in web development, providing hands-on experience with state management, component design, and frontend workflows.`,
     link: `https://woocommerce.portmonetka.pl/`,
     tech: ['React', 'Styled Components', 'Framer Motion'],
   },
@@ -90,7 +90,7 @@ export const previousProjectsData = [
     image: '/images/panele-montaz.webp',
     title: 'Installation Manager',
     subtitle: 'Assembly Process Manager',
-    text: 'I took over the project during its development. I was responsible for completing the project both on the frontend and backend.',
+    text: `Took over and completed the development of an assembly management platform built with Vue, Vuex, and Vuetify. I was responsible for both the frontend and backend parts of the project. The backend was developed with Node.js, Express, and MongoDB. My work focused on improving functionality, refining the user interface, and delivering a stable final version of the application.`,
     tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Express', 'Typescript'],
   },
   {
@@ -98,22 +98,15 @@ export const previousProjectsData = [
     image: '/images/panele.webp',
     title: 'Wholesale Managment',
     subtitle: 'Photovoltaic ordering platform',
-    text: 'I joined a well shaped project, written in a framework that I bearly knew. I found myself immediately in the new situation. I dealt with fixing bugs and developing new functionalities both on the frontend and backend.',
+    text: `Joined an established project built with Vue, a framework I was just beginning to learn at the time. Quickly adapted to the new environment, contributing by fixing bugs and developing new features on both the frontend and backend.`,
     tech: ['Vue', 'Vuex', 'Axios', 'Vuetify', 'Node', 'Express'],
   },
 ];
 
 export const scrapiProjectData = {
   desc: {
-    pOne: `The soule of this app is the backend api, that is build with node.js
-          and express. Its purpose is to scrape popular car retail sites, find
-          the newest entries and send them to the mobile app via socket
-          connection and expo notification. I used node-cron to set one minute
-          interval for scraping and comparing the data.`,
-    pTwo: `The mobile app uses socket connection to keap the data up to date when
-          the app is currently open. When the mobile app is in background or
-          turned off the expo notifications keap the user informed when a new
-          offers are posted.`,
+    pOne: `This is a Fullstack project built around a Node.js and Express backend API, which serves as the core of the system. Its main purpose is to scrape popular car retail websites, detect the newest listings, and deliver them to the React Native mobile client app via WebSocket connections and Expo push notifications.`,
+    pTwo: `A node-cron scheduler runs every minute to scrape data, compare it with existing entries, and identify new offers. When the mobile app is open, it maintains a real-time connection through sockets to keep data instantly synchronized. If the app is in the background or closed, users receive Expo notifications informing them about newly posted offers.`,
   },
   techUsed: {
     title: 'tech used',
@@ -132,11 +125,8 @@ export const scrapiProjectData = {
 
 export const managerProjectData = {
   desc: {
-    pOne: `Vehicles stock manager. Add, edit vehicles data and files. View data
-        from the web scraper Scrapi database.`,
-    listItemOne: `Additional features that will be included:`,
-    listItemTwo: `- managing Scrapi`,
-    listItemThree: `- integration witch otomoto API`,
+    pOne: `A Next.js application for managing and tracking vehicles through their entire lifecycle — from import and registration to sale. Users can add, edit, and update car details, monitor status changes, and maintain documentation in one place.`,
+    pTwo: `Planned features include direct Otomoto.pl integration for publishing listings and automated status tracking.`,
   },
   techUsed: {
     title: 'tech used',

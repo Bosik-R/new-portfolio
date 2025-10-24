@@ -18,32 +18,24 @@ const ScrapiDescription = ({ activeCard }: { activeCard: string }) => {
   }, [activeCard]);
 
   return (
-    <ul
+    <div
       ref={scope}
       className='absolute top-20 h-[600px] w-[380px] 2xl:w-[300px]'>
-      <li className='p-0 m-0'>
-        <p className='mb-5'>{desc.pOne}</p>
-      </li>
-      <li className='p-0 m-0'>
-        <p className='mb-10'>{desc.pTwo}</p>
-      </li>
-      <li className='p-0 m-0'>
-        <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
-          {techUsed.title}
-        </h6>
-      </li>
-      <li className='p-0 m-0'>
-        <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
-          {techUsed.tech.map((item, index) => (
-            <span
-              key={index}
-              className='skill-glass-chip px-3 py-1 w-fit text-xs'>
-              {item}
-            </span>
-          ))}
-        </div>
-      </li>
-    </ul>
+      <p className='mb-2 text-[14px]'>{desc.pOne}</p>
+      <p className='mb-5 text-[14px]'>{desc.pTwo}</p>
+      <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-3 uppercase text-[#f0f0f0]'>
+        {techUsed.title}
+      </h6>
+      <div className='flex gap-3 flex-wrap text-[#f0f0f0]'>
+        {techUsed.tech.map((item, index) => (
+          <span
+            key={index}
+            className='skill-glass-chip px-3 py-1 w-fit text-xs'>
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 
