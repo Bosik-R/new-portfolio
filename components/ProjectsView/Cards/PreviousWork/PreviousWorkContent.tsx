@@ -1,3 +1,4 @@
+'use client';
 import { projectCards } from '../../../../statics/projectCards';
 import { previousProjectsData } from '../../../../statics/projectsData';
 import { motion, useAnimate } from 'framer-motion';

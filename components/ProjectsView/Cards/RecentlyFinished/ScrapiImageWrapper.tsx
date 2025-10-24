@@ -1,3 +1,4 @@
+'use client';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';

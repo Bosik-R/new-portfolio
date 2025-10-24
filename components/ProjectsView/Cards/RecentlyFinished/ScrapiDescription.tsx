@@ -1,3 +1,4 @@
+'use client';
 import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
 import { projectCards } from '../../../../statics/projectCards';
