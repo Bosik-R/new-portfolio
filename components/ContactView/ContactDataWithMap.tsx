@@ -71,21 +71,21 @@ const ContactDataWithMap = () => {
                 d='M5 6.33L32 22.33L59 6.33'
                 stroke='white'
                 strokeWidth='2'
-                stroke-linecap='round'
+                strokeLinecap='round'
                 strokeLinejoin='round'
               />
               <path
                 d='M24.91 18.13L5 34.33'
                 stroke='white'
                 strokeWidth='2'
-                stroke-linecap='round'
+                strokeLinecap='round'
                 strokeLinejoin='round'
               />
               <path
                 d='M39.09 18.13L59 35.33'
                 stroke='white'
                 strokeWidth='2'
-                stroke-linecap='round'
+                strokeLinecap='round'
                 strokeLinejoin='round'
               />
             </svg>
@@ -107,7 +107,7 @@ const ContactDataWithMap = () => {
               <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
               <g
                 id='SVGRepo_tracerCarrier'
-                stroke-linecap='round'
+                strokeLinecap='round'
                 strokeLinejoin='round'></g>
               <g id='SVGRepo_iconCarrier'>
                 <path

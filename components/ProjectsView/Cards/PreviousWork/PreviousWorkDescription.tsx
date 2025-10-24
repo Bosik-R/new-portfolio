@@ -35,16 +35,16 @@ const PreviousWorkDescription = ({ project }: { project: ProjectTypes }) => {
             <h5 className='mb-5 font-semibold'>{project.title}</h5>
             <p className='mb-5'>{project.text}</p>
           </div>
-          <div>
+          <div className='flex flex-col justify-end gap-4'>
             {project.link ? (
               <Link
                 href={project.link}
-                className='underline border-b text-base pb-4'
+                className='underline border-b text-base w-fit'
                 target='_blank'>
                 view page
               </Link>
             ) : null}
-            <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
+            <h6 className='text-xs border-b-2 border-gray-400 py-2  uppercase text-[#f0f0f0]'>
               tech used
             </h6>
             <div className='flex gap-3 flex-wrap text-[#f0f0f0] pb-6'>
