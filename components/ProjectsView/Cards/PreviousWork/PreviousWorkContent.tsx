@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import PreviousWorkDescription from './PreviousWorkDescription';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 
 const mapedProjectsIds = previousProjectsData.map((project) => project.id);
 
@@ -15,7 +15,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
   const [animationProjectsIds, setAnimationProjectsIds] =
     useState(mapedProjectsIds);
   const [scope, animate] = useAnimate();
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   useEffect(() => {
     if (activeCard === projectCards.PREVIOUSE_PROJECTS) {
@@ -23,7 +23,7 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
         '#previous_projects_images',
         {
           right: isSmallDevice ? 120 : 25,
-          bottom: isSmallDevice ? 5 : 20,
+          bottom: isSmallDevice ? 5 : 60,
           rotateX: 2,
           rotateY: 4,
           rotateZ: 2,
@@ -215,25 +215,29 @@ const PreviousWorkContent = ({ activeCard }: { activeCard: string }) => {
         id='previous_projects_images'
         className='absolute max-w-[370px] 2xl:max-w-[440px] w-full h-[260px] 2xl:h-[330px] cursor-pointer'>
         {previousProjectsData.map((project, index) => (
-          <Image
-            id={`project_${project.id}`}
-            key={index}
-            onClick={() => handleClick()}
-            priority
-            width={280}
-            height={220}
-            src={project.image}
-            className={twMerge(
-              'absolute overflow-hidden rounded-lg z-auto w-[280px] h-[220px] project_images_shadow'
-            )}
+          <motion.div
+            initial={{
+              top: index * (isSmallDevice ? 5 : 30),
+              left: index * (isSmallDevice ? 45 : 30),
+            }}
             style={{
-              top: `${index * (isSmallDevice ? 5 : 30)}px`,
-              left: `${index * (isSmallDevice ? 45 : 30)}px`,
               zIndex: 10 - index,
               opacity: index > 3 ? (index === 4 ? 0.8 : 0) : 1,
             }}
-            alt={`${project.title}-${project.subtitle} image`}
-          />
+            className='absolute overflow-hidden rounded-lg project_images_shadow z-auto w-[290px] h-[235px]'
+            key={index}
+            id={`project_${project.id}`}>
+            <Image
+              onClick={() => handleClick()}
+              priority
+              fill={true}
+              src={project.image}
+              className={twMerge(
+                'rounded-lg absolute top-0 left-0 bottom-0 right-0'
+              )}
+              alt={`${project.title}-${project.subtitle} image`}
+            />
+          </motion.div>
         ))}
       </div>
     </motion.div>

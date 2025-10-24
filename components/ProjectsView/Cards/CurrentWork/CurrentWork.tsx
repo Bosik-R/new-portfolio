@@ -6,11 +6,11 @@ import { useAnimate } from 'framer-motion';
 import ManagerImageWrapper from './ManagerImageWrapper';
 import { twMerge } from 'tailwind-merge';
 import ManagerDescription from './ManagerDescription';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 
 const CurrentWork = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   useEffect(() => {
     const animation = async () => {

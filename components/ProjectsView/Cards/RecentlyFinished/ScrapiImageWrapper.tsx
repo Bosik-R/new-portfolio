@@ -1,5 +1,5 @@
 'use client';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';
 import Image from 'next/image';
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
   const [activeImage, setActiveImage] = useState({ current: 1, prev: 2 });
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   useEffect(() => {
     if (activeCard === projectCards.RECENTLY_FINISHED) {
@@ -42,12 +42,12 @@ const ScrapiImageWrapper = ({ activeCard }: { activeCard: string }) => {
       animate(
         scope.current,
         {
-          left: -20,
+          top: isSmallDevice ? -40 : -25,
+          left: isSmallDevice ? -20 : -10,
           rotateX: 52,
           rotateY: 9,
           rotateZ: -19,
           scale: 0.5,
-          top: -40,
           zIndex: 2,
         },
         { duration: 0.4 }

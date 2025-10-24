@@ -3,13 +3,10 @@ import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
 import { projectCards } from '../../../../statics/projectCards';
 import { scrapiProjectData } from '@/statics/projectsData';
-import { twMerge } from 'tailwind-merge';
-import { useMediaQuery } from '@uidotdev/usehooks';
 
 const ScrapiDescription = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
   const { desc, techUsed } = scrapiProjectData;
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     if (activeCard === projectCards.RECENTLY_FINISHED) {
@@ -23,10 +20,7 @@ const ScrapiDescription = ({ activeCard }: { activeCard: string }) => {
   return (
     <ul
       ref={scope}
-      className={twMerge(
-        'absolute top-20 h-[600px]',
-        isSmallDevice ? 'w-[380px]' : 'w-[300px]'
-      )}>
+      className='absolute top-20 h-[600px] w-[380px] 2xl:w-[300px]'>
       <li className='p-0 m-0'>
         <p className='mb-5'>{desc.pOne}</p>
       </li>

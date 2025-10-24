@@ -5,11 +5,11 @@ import { twMerge } from 'tailwind-merge';
 import { projectCards } from '../../../../statics/projectCards';
 import ScrapiImageWrapper from './ScrapiImageWrapper';
 import ScrapiDescription from './ScrapiDescription';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 
 const RecentlyFinished = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   useEffect(() => {
     const animation = async () => {
@@ -32,8 +32,8 @@ const RecentlyFinished = ({ activeCard }: { activeCard: string }) => {
         animate('#underline', { right: 25 });
       } else if (activeCard === projectCards.PREVIOUSE_PROJECTS) {
         animate('#scrapi_title', {
-          top: 100,
-          left: 150,
+          top: isSmallDevice ? 100 : 120,
+          left: isSmallDevice ? 150 : 90,
           scale: 0.5,
         });
 
@@ -47,13 +47,13 @@ const RecentlyFinished = ({ activeCard }: { activeCard: string }) => {
 
         await animate(
           '#card1_title_2',
-          { right: isSmallDevice ? 314 : 164, top: 58, scale: 1 },
+          { right: 314, top: 58, scale: 1 },
           { duration: 0.5 }
         );
       } else {
         animate('#scrapi_title', {
-          top: isSmallDevice ? 120 : 80,
-          left: isSmallDevice ? 150 : 80,
+          top: isSmallDevice ? 120 : 100,
+          left: isSmallDevice ? 150 : 100,
           scale: 0.5,
         });
 

@@ -8,7 +8,7 @@ import RecentlyFinished from './Cards/RecentlyFinished/RecentlyFinished';
 import { projectCards } from '../../statics/projectCards';
 import CurrentWork from './Cards/CurrentWork/CurrentWork';
 import PreviousWork from './Cards/PreviousWork/PreviousWork';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 
 const ProjectsContentNew = () => {
   const [activeCard, setActiveCard] = useState({
@@ -17,7 +17,7 @@ const ProjectsContentNew = () => {
   });
 
   const [scope, animate] = useAnimate();
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   const handleAnimateOne = async () => {
     if (activeCard.new === projectCards.RECENTLY_FINISHED) return;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'react-responsive';
 import { projectCards } from '../../../../statics/projectCards';
 import { useAnimate } from 'framer-motion';
 import Image from 'next/image';
@@ -17,7 +17,7 @@ const mapedImagesIds = imagesArray.map((image) => image.id);
 const ManagerImageWrapper = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
   const [animationImagesIds, setAnimationImagesIds] = useState(mapedImagesIds);
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
+  const isSmallDevice = useMediaQuery({ maxWidth: 1536 });
 
   useEffect(() => {
     if (activeCard === projectCards.CURRENT_WORKING_ON) {
