@@ -2,13 +2,10 @@ import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
 import { projectCards } from '../../../../statics/projectCards';
 import { managerProjectData } from '@/statics/projectsData';
-import { twMerge } from 'tailwind-merge';
-import { useMediaQuery } from '@uidotdev/usehooks';
 
 const ManagerDescription = ({ activeCard }: { activeCard: string }) => {
   const [scope, animate] = useAnimate();
   const { desc, techUsed } = managerProjectData;
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 1536px)');
 
   useEffect(() => {
     if (activeCard === projectCards.CURRENT_WORKING_ON) {
@@ -21,19 +18,11 @@ const ManagerDescription = ({ activeCard }: { activeCard: string }) => {
 
   return (
     <div ref={scope} className='absolute left-[25px] w-[90%] h-fit text-base'>
-      <p className={twMerge('mb-5', isSmallDevice ? 'w-[240px]' : 'w-full')}>
-        {desc.pOne}
-      </p>
+      <p className='mb-5 w-[240px] 2xl:w-full'>{desc.pOne}</p>
       <ul>
-        <li className={twMerge('mb-2', isSmallDevice ? 'w-[240px]' : 'w-full')}>
-          {desc.listItemOne}
-        </li>
-        <li className={twMerge('mb-2', isSmallDevice ? 'w-[240px]' : 'w-full')}>
-          {desc.listItemTwo}
-        </li>
-        <li className={twMerge('mb-5', isSmallDevice ? 'w-[240px]' : 'w-full')}>
-          {desc.listItemThree}
-        </li>
+        <li className='mb-2 w-[240px] 2xl:w-full'>{desc.listItemOne}</li>
+        <li className='mb-2 w-[240px] 2xl:w-full'>{desc.listItemTwo}</li>
+        <li className='mb-5 w-[240px] 2xl:w-full'>{desc.listItemThree}</li>
         <li className='p-0 m-0'>
           <h6 className='text-xs border-b-2 border-gray-400 pb-2 mb-4 uppercase text-[#f0f0f0]'>
             {techUsed.title}
