@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.10.82",
+    "@splinetool/runtime": "^1.10.86",
     "@types/nodemailer": "^7.0.2",
     "framer-motion": "^12.23.24",
     "next": "15.5.6",

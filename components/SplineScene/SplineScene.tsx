@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 import Spline from '@splinetool/react-spline';
 
-const scene = process.env.NEXT_PUBLIC_SPLINE_SCENE ?? '';
+const scene = './scene.splinecode';
 
 const SplineScene = () => {
   const { onLoad, onSplineMouseDown, loading } = useSpline();
