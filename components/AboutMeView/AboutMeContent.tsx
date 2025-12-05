@@ -1,23 +1,23 @@
-import { aboutMeData } from '../../statics/aboutMeData';
+import { aboutMeData, socialLinks } from '../../statics/aboutMeData';
 import LinkedInIcon from '../Icons/LinkedInIcon';
 import Link from 'next/link';
 import GitHubIcon from '../Icons/GitHubIcon';
 import CVIcon from '../Icons/CVIcon';
 
-const socialLinks = [
+const socialLinksComponents = [
   {
     id: 'cv',
-    href: 'https://drive.google.com/file/d/1TeyMp8I0H1dmrz4ZJi_CzXN3cqYxmysk/view?usp=drive_link',
+    href: socialLinks.cv,
     icon: <CVIcon />,
   },
   {
     id: 'linkedin',
-    href: 'https://www.linkedin.com/in/tomasz-rosik-3b55381bb/',
+    href: socialLinks.linkedIn,
     icon: <LinkedInIcon />,
   },
   {
     id: 'github',
-    href: 'https://github.com/Bosik-R',
+    href: socialLinks.github,
     icon: <GitHubIcon />,
   },
 ];
@@ -38,7 +38,7 @@ const AboutMeContent = () => {
         ))}
       </div>
       <div className='w-full flex justify-center gap-10'>
-        {socialLinks.map((link) => (
+        {socialLinksComponents.map((link) => (
           <Link key={link.id} href={link.href} target='_blank'>
             {link.icon}
           </Link>

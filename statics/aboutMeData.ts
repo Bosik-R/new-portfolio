@@ -8,3 +8,9 @@ export const aboutMeData = {
     `My goal is simple: to deliver cutting-edge solutions that exceed expectations and leave a lasting impression.`,
   ],
 };
+
+export const socialLinks = {
+  cv: 'https://drive.google.com/file/d/1c6yjBWwPTAOkxNigHfKEk8xDYUDTTPRZ/view?usp=sharing',
+  linkedIn: 'https://www.linkedin.com/in/tomasz-rosik-3b55381bb/',
+  github: 'https://github.com/Bosik-R',
+};
