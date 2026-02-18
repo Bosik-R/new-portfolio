@@ -1,48 +1,35 @@
-import nodemailer from 'nodemailer';
-import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_PASSWORD);
+const from = process.env.RESEND_FROM_EMAIL || 'kontakt@tomaszrosik.pl';
+const to = process.env.RESEND_TO_EMAIL || 'tomasz.rosik82@gmail.com';
 
 export const sendMail = async ({
   name,
-  body,
+  message,
 }: {
   name: string;
-  body: string;
+  message: string;
 }) => {
-  const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
-
-  console.log('EMAIL:', SMTP_EMAIL);
-
-  const transport = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: SMTP_EMAIL,
-      pass: SMTP_PASSWORD,
-    },
-  });
+  const body = `<div><p>Od: ${name}</p><p>Treść: ${message}</p></div>`;
 
   try {
-    const testResult = await transport.verify();
-    console.log(testResult);
-  } catch (err) {
-    console.log('error on transport verify', err);
-    return { message: 'server currently unavailable', status: false };
-  }
-  const subject = `Contact request send from ${name}`;
-
-  try {
-    const response: SMTPTransport.SentMessageInfo = await transport.sendMail({
-      to: SMTP_EMAIL,
-      subject,
+    resend.emails.send({
+      from,
+      to,
+      subject: 'Kontakt z portfolio',
       html: body,
     });
+
     return {
-      message: !!response.accepted
-        ? 'Contact request send succesfully'
-        : 'Something went wrong, try again later',
-      status: !!response.accepted,
+      message: 'Contact request send succesfully',
+      status: true,
     };
-  } catch (error) {
-    console.log(error);
-    return { message: 'server currently unavailable', status: false };
+  } catch (err) {
+    console.error(err);
+    return {
+      message: 'Contact request error',
+      status: false,
+    };
   }
 };
