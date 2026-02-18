@@ -10,6 +10,8 @@ export const sendMail = async ({
 }) => {
   const { NEXT_PUBLIC_SMTP_EMAIL, NEXT_PUBLIC_SMTP_PASSWORD } = process.env;
 
+  console.log('EMAIL:', NEXT_PUBLIC_SMTP_EMAIL);
+
   const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -22,7 +24,7 @@ export const sendMail = async ({
     const testResult = await transport.verify();
     console.log(testResult);
   } catch (err) {
-    console.log(err);
+    console.log('error on transport verify', err);
     return { message: 'server currently unavailable', status: false };
   }
   const subject = `Contact request send from ${name}`;
