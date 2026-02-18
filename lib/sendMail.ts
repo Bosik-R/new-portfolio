@@ -8,15 +8,15 @@ export const sendMail = async ({
   name: string;
   body: string;
 }) => {
-  const { NEXT_PUBLIC_SMTP_EMAIL, NEXT_PUBLIC_SMTP_PASSWORD } = process.env;
+  const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
 
-  console.log('EMAIL:', NEXT_PUBLIC_SMTP_EMAIL);
+  console.log('EMAIL:', SMTP_EMAIL);
 
   const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: NEXT_PUBLIC_SMTP_EMAIL,
-      pass: NEXT_PUBLIC_SMTP_PASSWORD,
+      user: SMTP_EMAIL,
+      pass: SMTP_PASSWORD,
     },
   });
 
@@ -31,7 +31,7 @@ export const sendMail = async ({
 
   try {
     const response: SMTPTransport.SentMessageInfo = await transport.sendMail({
-      to: NEXT_PUBLIC_SMTP_EMAIL,
+      to: SMTP_EMAIL,
       subject,
       html: body,
     });
