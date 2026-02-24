@@ -14,7 +14,7 @@ export const sendMail = async ({
   const body = `<div><p>Od: ${name}</p><p>Treść: ${message}</p></div>`;
 
   try {
-    resend.emails.send({
+    await resend.emails.send({
       from,
       to,
       subject: 'Kontakt z portfolio',
